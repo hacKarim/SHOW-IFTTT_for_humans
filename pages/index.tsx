@@ -12,7 +12,6 @@ export default function Home() {
     fontWeight: "700",
     cursor: "pointer",
     width: "100%",
-    margin: "-40px 0px 10px -10px",
   };
 
   const templateConditions = [
@@ -94,7 +93,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
-          {"{ ... }"}
+          {"{"}
         </div>
 
         <div>
@@ -115,6 +114,10 @@ export default function Home() {
             .map((habit: any, index: any) => {
               return <Habit key={habit.id} habit={habit}></Habit>;
             })}
+
+<div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
+          {"}"}
+        </div>
       </main>
     </div>
   );
