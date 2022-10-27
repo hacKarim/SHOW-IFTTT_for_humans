@@ -57,8 +57,8 @@ export default function Habit(props: any) {
   const textStyling = { fontSize: "1.5em", fontWeight: "400", opacity: "0.5" };
   const textStylingDimmed = {
     fontSize: "1.5em",
-    fontWeight: "100",
-    opacity: "0.4",
+    fontWeight: "600",
+    opacity: "0.2",
   };
   const editableStyling = {
     borderBottom: "1px solid",
@@ -72,21 +72,21 @@ export default function Habit(props: any) {
     fontSize: "2em",
     fontWeight: "100",
     cursor: "pointer",
-    margin: "0px 10px 0px 0px",
+    margin: "0px 0px 0px 20px",
     opacity: "0.5",
   };
   const deleteButtonStylingHidden = {
     fontSize: "2em",
     fontWeight: "100",
     cursor: "pointer",
-    margin: "0px 10px 0px 0px",
+    margin: "0px 0px 0px 20px",
     opacity: "0",
   };
 
   return (
     <>
       <div
-        style={{ overflow: "hidden", margin: "10px 0px", overflowX: "scroll" }}
+        style={{ overflow: "hidden", margin: "10px 0px", overflowX: "scroll",paddingLeft: 30}}
         onMouseOver={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -99,12 +99,7 @@ export default function Habit(props: any) {
           }}
         >
           
-            <div
-              style={isHovering ? deleteButtonStyling : deleteButtonStylingHidden}
-              onClick={() => deleteHabit(props.habit.id)}
-            >
-              <FiDelete size={20} color={"darkred"} />
-            </div>
+            
           <span style={textStyling}>if</span>
           {props.habit &&
             props.habit.conditions.map((condition: tCondition, index: any) => {
@@ -155,7 +150,14 @@ export default function Habit(props: any) {
                 </span>
               );
             })}
+            <div
+              style={isHovering ? deleteButtonStyling : deleteButtonStylingHidden}
+              onClick={() => deleteHabit(props.habit.id)}
+            >
+              <FiDelete size={20} color={"darkred"} />
+            </div>
         </div>
+        
       </div>
     </>
   );
