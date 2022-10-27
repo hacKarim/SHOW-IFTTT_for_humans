@@ -111,7 +111,7 @@ export default function Habit(props: any) {
                 (condition: tCondition, index: any) => {
                   return (
                     <span key={index}>
-                      <span style={textStylingDimmed}>{" { "}</span>
+                      <span style={textStylingDimmed}>{" ( "}</span>
                       <ContentEditable
                         html={condition.title}
                         disabled={false}
@@ -123,7 +123,7 @@ export default function Habit(props: any) {
                         key={index}
                       />
 
-                      <span style={textStylingDimmed}>{" }"}</span>
+                      <span style={textStylingDimmed}>{" )"}</span>
 
                       <span style={textStyling}>
                         {props.habit.conditions.length != index + 1 && <> & </>}
@@ -132,7 +132,7 @@ export default function Habit(props: any) {
                   );
                 }
               )}
-            <span style={textStyling}>, </span>
+            <span style={textStyling}>: </span>
           </div>
          </div>
          <div

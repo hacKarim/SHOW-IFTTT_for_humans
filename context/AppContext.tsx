@@ -1,4 +1,10 @@
-import { createContext, useContext, ReactNode, useState } from "react";
+import {
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+} from "react";
 
 import { tHabit, tHabits, tAction, tCondition } from "../helpers";
 
@@ -18,9 +24,7 @@ const appContextDefaultValues: habitsContextType = {
   deleteHabit: () => {},
 };
 
-const HabitsContext = createContext<habitsContextType>(
-  appContextDefaultValues
-);
+const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
 
 export function useHabits() {
   return useContext(HabitsContext);
@@ -31,22 +35,38 @@ type Props = {
 };
 
 export function HabitsProvider({ children }: Props) {
-  const [habits, setHabits] = useState<tHabits>([]);
+  // useEffect(() => {
+  //   setTasks(JSON.parse(localStorage.getItem("tasks")));
+  // }, []);
+
+  const [habits, setHabits] = useState<any>(
+    typeof window !== "undefined" && !localStorage.getItem("habits")
+      ? localStorage.setItem("habits", JSON.stringify([]))
+      : []
+  );
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+      setHabits(JSON.parse(localStorage.getItem("habits") as any));
+  }, []);
 
   const addHabit = (habit: tHabit) => {
     let habitWith = habit;
     habitWith.id = UUID();
     habitWith.order = habits.length + 1;
     setHabits(habits?.concat(habitWith));
+    localStorage.setItem("habits", JSON.stringify(habits));
   };
 
   const editHabit = (habit: tHabit) => {
-    let habitsFiltered = habits.filter((e) => e.id != habit.id);
+    let habitsFiltered = habits.filter((e: any) => e.id != habit.id);
     setHabits(habitsFiltered.concat(habit));
+    localStorage.setItem("habits", JSON.stringify(habits));
   };
 
   const deleteHabit = (id: String) => {
-    setHabits(habits.filter((habit) => habit.id != id));
+    setHabits(habits.filter((habit: any) => habit.id != id));
+    localStorage.setItem("habits", JSON.stringify(habits));
   };
 
   const value = {

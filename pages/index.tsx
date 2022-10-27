@@ -92,43 +92,90 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-<div style={{
-  
-            position:"fixed"       ,
-            height: "65px" ,   
-            width: "100vw" ,
-            margin: "-5px auto",
-            display: "flex",
-            flexWrap: "nowrap",
-            alignItems: "flex-start",
-            justifyContent: "space-around",
-            backdropFilter:"blur(50px)",
-            zIndex: 99999999,
-            borderBottom: "1px solid black"
-        
-
-          }}>
       <div
+        style={{
+          display: "none",
+          position: "fixed",
+          height: "65px",
+          width: "100vw",
+          margin: "-5px auto",
+          // display: "flex",
+          flexWrap: "nowrap",
+          alignItems: "flex-start",
+          justifyContent: "space-around",
+          backdropFilter: "blur(50px)",
+          zIndex: 99999999,
+          borderBottom: "1px solid black",
+        }}
+      >
+        <div
           style={{
             fontSize: "3em",
             fontWeight: "600",
             textShadow: "0px 0px 100px white",
-            marginTop:"5px"
-            
-
+            marginTop: "5px",
           }}
         >
-          <span style={{marginTop:"-3px", position: "absolute", marginLeft: "-115px", fontWeight: "bolder"}}>IFTTT</span> 
-          <sup style={{ fontSize: "0.8em", marginTop: "10px",fontWeight: "100", marginLeft: "20px", position: "absolute",fontFamily:"monospace" }}>[</sup>
-          <sup style={{ fontSize: "0.4em", marginTop: "16px", marginLeft: "30px",  position: "absolute", fontFamily:"monospace"}}>for</sup>
-          <sup style={{ fontSize: "0.4em", marginTop: "26px", marginLeft: "30px", position: "absolute" , fontFamily:"monospace"}}>humans</sup>
-           <sup style={{ fontSize: "0.8em", fontWeight: "100", marginTop: "10px",marginLeft: "75px", position: "absolute" ,fontFamily:"monospace"}}>]</sup>
-
+          <span
+            style={{
+              marginTop: "-3px",
+              position: "absolute",
+              marginLeft: "-115px",
+              fontWeight: "bolder",
+            }}
+          >
+            IFTTT
+          </span>
+          <sup
+            style={{
+              fontSize: "0.8em",
+              marginTop: "10px",
+              fontWeight: "100",
+              marginLeft: "20px",
+              position: "absolute",
+              fontFamily: "monospace",
+            }}
+          >
+            [
+          </sup>
+          <sup
+            style={{
+              fontSize: "0.4em",
+              marginTop: "16px",
+              marginLeft: "30px",
+              position: "absolute",
+              fontFamily: "monospace",
+            }}
+          >
+            for
+          </sup>
+          <sup
+            style={{
+              fontSize: "0.4em",
+              marginTop: "26px",
+              marginLeft: "30px",
+              position: "absolute",
+              fontFamily: "monospace",
+            }}
+          >
+            humans
+          </sup>
+          <sup
+            style={{
+              fontSize: "0.8em",
+              fontWeight: "100",
+              marginTop: "10px",
+              marginLeft: "75px",
+              position: "absolute",
+              fontFamily: "monospace",
+            }}
+          >
+            ]
+          </sup>
         </div>
-        </div>
+      </div>
 
       <main className={styles.main}>
-
         <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
           {"{"}
         </div>
