@@ -8,11 +8,11 @@ import Habit from "../components/habit";
 export default function Home() {
   const { addHabit, editHabit, deleteHabit, habits } = useHabits();
   const addHabitStyling = {
-    fontSize: "5em",
+    fontSize: "4em",
     fontWeight: "700",
     cursor: "pointer",
     width: "100%",
-    margin: "-40px 0px 50px 0px",
+    margin: "-40px 0px 10px -10px",
   };
 
   const templateConditions = [
