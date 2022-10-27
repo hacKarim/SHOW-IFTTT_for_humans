@@ -113,6 +113,7 @@ export default function Home() {
             fontSize: "3em",
             fontWeight: "600",
             textShadow: "0px 0px 100px white",
+            marginTop:"5px"
             
 
           }}

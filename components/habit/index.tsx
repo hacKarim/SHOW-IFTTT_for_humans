@@ -86,7 +86,13 @@ export default function Habit(props: any) {
   return (
     <>
       <div
-        style={{ overflow: "hidden", margin: "10px 0px", overflowX: "scroll",paddingLeft: 30}}
+        style={{
+          overflow: "hidden",
+          margin: "10px 0px 50px 0px",
+          overflowX: "scroll",
+          paddingLeft: 30,
+          height: "fit-content",
+        }}
         onMouseOver={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -98,66 +104,79 @@ export default function Habit(props: any) {
             alignItems: "center",
           }}
         >
-          
-            
-          <span style={textStyling}>if</span>
-          {props.habit &&
-            props.habit.conditions.map((condition: tCondition, index: any) => {
-              return (
-                <span key={index}>
-                  <span style={textStylingDimmed}>{" { "}</span>
-                  <ContentEditable
-                    html={condition.title}
-                    disabled={false}
-                    onChange={(e) => onChange(e, index, "condition")}
-                    onFocus={(e) => onFocus(e, index, "condition")}
-                    onBlur={(e) => onBlur(e, index, "condition")}
-                    tagName="span"
-                    style={{ ...textStyling, ...editableStyling }}
-                    key={index}
-                  />
+          <div>
+            <span style={textStyling}>if</span>
+            {props.habit &&
+              props.habit.conditions.map(
+                (condition: tCondition, index: any) => {
+                  return (
+                    <span key={index}>
+                      <span style={textStylingDimmed}>{" { "}</span>
+                      <ContentEditable
+                        html={condition.title}
+                        disabled={false}
+                        onChange={(e) => onChange(e, index, "condition")}
+                        onFocus={(e) => onFocus(e, index, "condition")}
+                        onBlur={(e) => onBlur(e, index, "condition")}
+                        tagName="span"
+                        style={{ ...textStyling, ...editableStyling }}
+                        key={index}
+                      />
 
-                  <span style={textStylingDimmed}>{" }"}</span>
+                      <span style={textStylingDimmed}>{" }"}</span>
 
-                  <span style={textStyling}>
-                    {props.habit.conditions.length != index + 1 && <> & </>}
+                      <span style={textStyling}>
+                        {props.habit.conditions.length != index + 1 && <> & </>}
+                      </span>
+                    </span>
+                  );
+                }
+              )}
+            <span style={textStyling}>, </span>
+          </div>
+         </div>
+         <div
+          style={{
+            width: "max-content",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            paddingLeft: "25px"
+          }}
+        >
+          <div>
+            <span style={textStyling}>then </span>
+
+            {props.habit &&
+              props.habit.actions.map((action: tAction, index: any) => {
+                return (
+                  <span key={index}>
+                    <span style={textStylingDimmed}>{"{ "}</span>
+                    <ContentEditable
+                      html={action.title}
+                      disabled={false}
+                      onChange={(e) => onChange(e, index, "action")}
+                      onFocus={(e) => onFocus(e, index, "action")}
+                      onBlur={(e) => onBlur(e, index, "action")}
+                      tagName="span"
+                      style={{ ...textStyling, ...editableStyling }}
+                    />
+
+                    <span style={textStylingDimmed}>{" }"}</span>
+                    <span style={textStyling}>
+                      {props.habit.actions.length != index + 1 && <> & </>}
+                    </span>
                   </span>
-                </span>
-              );
-            })}
-
-          <span style={textStyling}>, then </span>
-
-          {props.habit &&
-            props.habit.actions.map((action: tAction, index: any) => {
-              return (
-                <span key={index}>
-                  <span style={textStylingDimmed}>{"{ "}</span>
-                  <ContentEditable
-                    html={action.title}
-                    disabled={false}
-                    onChange={(e) => onChange(e, index, "action")}
-                    onFocus={(e) => onFocus(e, index, "action")}
-                    onBlur={(e) => onBlur(e, index, "action")}
-                    tagName="span"
-                    style={{ ...textStyling, ...editableStyling }}
-                  />
-
-                  <span style={textStylingDimmed}>{" }"}</span>
-                  <span style={textStyling}>
-                    {props.habit.actions.length != index + 1 && <> & </>}
-                  </span>
-                </span>
-              );
-            })}
-            <div
-              style={isHovering ? deleteButtonStyling : deleteButtonStylingHidden}
-              onClick={() => deleteHabit(props.habit.id)}
-            >
-              <FiDelete size={20} color={"darkred"} />
-            </div>
+                );
+              })}
+          </div>
+          <div
+            style={isHovering ? deleteButtonStyling : deleteButtonStylingHidden}
+            onClick={() => deleteHabit(props.habit.id)}
+          >
+            <FiDelete size={20} color={"darkred"} />
+          </div>
         </div>
-        
       </div>
     </>
   );
