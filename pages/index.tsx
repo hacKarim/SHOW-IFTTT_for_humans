@@ -12,7 +12,6 @@ export default function Home() {
     fontWeight: "700",
     cursor: "pointer",
     width: "100%",
-    textAlign: "center",
     margin: "-40px 0px 50px 0px",
   };
 
