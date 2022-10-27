@@ -1,0 +1,32 @@
+{
+  "name": "ifttt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^35.2.1",
+    "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@emoji-mart/data": "^1.0.6",
+    "@emoji-mart/react": "^1.0.1",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "emoji-mart": "^5.2.2",
+    "next": "13.0.0",
+    "perfect-scrollbar": "^1.5.5",
+    "react": "18.2.0",
+    "react-contenteditable": "^3.3.6",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.6",
+    "@types/react": "18.0.23",
+    "@types/react-dom": "18.0.7",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.0",
+    "typescript": "4.8.4"
+  }
+}
