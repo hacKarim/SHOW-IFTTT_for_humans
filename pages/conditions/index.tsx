@@ -64,7 +64,7 @@ export default function Conditions() {
   const dummyColors = ["#F79256", "#FBD1A2", "#7DCFB6", "#00B2CA", "#1D4E89"];
 
   const getStockBubbles = () => {
-    return conditions.map((item, i) => {
+    return conditions.map((item :any, i:any) => {
       return <CompanyBubble condition={item} key={i} backgroundColor={dummyColors[i % dummyColors.length]}/>;
     });
   };

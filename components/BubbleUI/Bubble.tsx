@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Bubble.module.css";
-export default function CompanyBubble(props) {
+export default function CompanyBubble(props :any) {
   return (
     <div
       style={{
