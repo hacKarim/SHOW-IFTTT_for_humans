@@ -7,7 +7,6 @@ import {
 } from "react";
 
 import { tHabit, tHabits } from "../helpers";
-
 import { UUID } from "../helpers";
 
 type habitsContextType = {
@@ -75,7 +74,7 @@ export function HabitsProvider({ children }: Props) {
     typeof window !== "undefined" &&
       setHabits(JSON.parse(localStorage.getItem("habits") as any));
     typeof window !== "undefined" &&
-      setHabits(JSON.parse(localStorage.getItem("actionLog") as any));
+      setConditions(JSON.parse(localStorage.getItem("actionLog") as any));
   }, []);
 
   const addHabit = (habit: tHabit) => {

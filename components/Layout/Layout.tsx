@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
 
       <main className={styles.MainView}>{children}</main>
       <footer className={styles.Footer}>
-        <Link href={"/"}>
+        <Link href={"/habits"}>
           <div>
             <TfiLoop />
           </div>
