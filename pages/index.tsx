@@ -13,7 +13,7 @@ export default function Home() {
     cursor: "pointer",
     width: "100%",
     marginTop: "-10px",
-    padding: "10px"
+    padding: "10px",
   };
 
   const templateConditions = [
@@ -66,40 +66,15 @@ export default function Home() {
     id: undefined,
     conditions: [
       {
-        title:
-          "..."
+        title: "...",
       },
     ],
     actions: [
       {
-        title:
-          "..."
+        title: "...",
       },
     ],
   };
-  // const [habitsSample, setHabitsSample] = useState([
-  //   {
-  //     id: "1",
-  //     conditions: [{ id: "c1", title: "🌅 the sun shines" }],
-  //     actions: [{ id: "a1", title: "⏰ wake up" }],
-  //   },
-  //   {
-  //     id: "2",
-  //     conditions: [{ id: "c2", title: "⏰ wake up" }],
-  //     actions: [
-  //       { id: "a2a", title: "🚿 shower" },
-  //       { id: "a2b", title: "🪥 brush teeth" },
-  //     ],
-  //   },
-  //   {
-  //     id: "3",
-  //     conditions: [
-  //       { id: "c3a", title: "😒 bored" },
-  //       { id: "c3b", title: "🧘‍♀️ in a calm place" },
-  //     ],
-  //     actions: [{ id: "a3", title: "📖 read a book" }],
-  //   },
-  // ]) as any;
 
   return (
     <div className={styles.container}>
@@ -197,15 +172,7 @@ export default function Home() {
           {"const habits = ["}
         </div>
 
-        <div>
-          {/* <button onClick={() => console.log(habits)}>ListHabits</button> */}
-          {/* <button onClick={() => addHabit(simpleHabit)}>AddHabit</button> */}
-          {/* <button onClick={() => editHabit(editedHabitA)}>
-            InitializeEdit
-          </button> */}
-          {/* <button onClick={() => editHabit(editedHabitB)}>EditHabit</button>
-          <button onClick={() => deleteHabit("xxx")}>DeleteHabit</button> */}
-        </div>
+        <div></div>
         <div>
           {habits &&
             habits
@@ -216,14 +183,14 @@ export default function Home() {
                 return <Habit key={habit.id} habit={habit}></Habit>;
               })}
         </div>
-        <div  onClick={() => addHabit(simpleHabit)} style={{cursor:"pointer"}}>
-        <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
-
+        <div
+          onClick={() => addHabit(simpleHabit)}
+          style={{ cursor: "pointer" }}
+        >
+          <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
         </div>
 
-        <div style={addHabitStyling}>
-          {"];"}
-        </div>
+        <div style={addHabitStyling}>{"];"}</div>
       </main>
     </div>
   );

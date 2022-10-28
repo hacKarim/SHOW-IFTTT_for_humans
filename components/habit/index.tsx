@@ -1,14 +1,12 @@
-import Head from "next/head";
-import styles from "../../styles/Home.module.css";
 import React, { useEffect, useState } from "react";
 import ContentEditable from "react-contenteditable";
-import { tHabit, tHabits, tAction, tCondition } from "../../helpers";
+import { tAction, tCondition } from "../../helpers";
 
 import { useHabits } from "../../context/AppContext";
 
 import { FiDelete } from "react-icons/fi";
 export default function Habit(props: any) {
-  const { addHabit, editHabit, deleteHabit, habits } = useHabits();
+  const { editHabit, deleteHabit } = useHabits();
 
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -68,21 +66,6 @@ export default function Habit(props: any) {
     opacity: "1",
   };
 
-  const deleteButtonStyling = {
-    fontSize: "2em",
-    fontWeight: "100",
-    cursor: "pointer",
-    margin: "-20px 0px 0px -25px",
-    opacity: "0.5",
-  };
-  const deleteButtonStylingHidden = {
-    fontSize: "2em",
-    fontWeight: "100",
-    cursor: "pointer",
-    margin: "-20px 0px 0px -25px",
-    visibility: "hidden",
-  };
-
   return (
     <>
       <div
@@ -132,17 +115,24 @@ export default function Habit(props: any) {
                   );
                 }
               )}
-            <span style={textStyling}> : <FiDelete
-            size={20}
-            color={"darkred"}
-            style={{ cursor:"pointer", visibility: isHovering && !props.disabled ? "visible" : "hidden", marginBottom: "-3px" }}
-            onClick={() => deleteHabit(props.habit.id)}
-          /></span>
-
-          
+            <span style={textStyling}>
+              {" "}
+              :{" "}
+              <FiDelete
+                size={20}
+                color={"darkred"}
+                style={{
+                  cursor: "pointer",
+                  visibility:
+                    isHovering && !props.disabled ? "visible" : "hidden",
+                  marginBottom: "-3px",
+                }}
+                onClick={() => deleteHabit(props.habit.id)}
+              />
+            </span>
           </div>
         </div>
-       
+
         <div
           style={{
             width: "max-content",

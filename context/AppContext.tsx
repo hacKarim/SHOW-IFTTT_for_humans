@@ -6,7 +6,7 @@ import {
   useEffect,
 } from "react";
 
-import { tHabit, tHabits, tAction, tCondition } from "../helpers";
+import { tHabit, tHabits } from "../helpers";
 
 import { UUID } from "../helpers";
 
@@ -16,6 +16,8 @@ type habitsContextType = {
   editHabit: (habit: tHabit) => void;
   deleteHabit: (id: string) => void;
   conditions: any;
+  actionLog: any;
+  addActionLog: (actionLogItem: any) => void;
 };
 
 const appContextDefaultValues: habitsContextType = {
@@ -24,6 +26,8 @@ const appContextDefaultValues: habitsContextType = {
   editHabit: () => {},
   deleteHabit: () => {},
   conditions: [],
+  actionLog: [],
+  addActionLog: () => {},
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -40,6 +44,12 @@ export function HabitsProvider({ children }: Props) {
   const [habits, setHabits] = useState<any>(
     typeof window !== "undefined" && !localStorage.getItem("habits")
       ? localStorage.setItem("habits", JSON.stringify([]))
+      : []
+  );
+
+  const [actionLog, setActionLog] = useState<any>(
+    typeof window !== "undefined" && !localStorage.getItem("actionLog")
+      ? localStorage.setItem("actionLog", JSON.stringify([]))
       : []
   );
 
@@ -60,11 +70,12 @@ export function HabitsProvider({ children }: Props) {
       )
     );
   }, [habits]);
-  
 
   useEffect(() => {
     typeof window !== "undefined" &&
       setHabits(JSON.parse(localStorage.getItem("habits") as any));
+    typeof window !== "undefined" &&
+      setHabits(JSON.parse(localStorage.getItem("actionLog") as any));
   }, []);
 
   const addHabit = (habit: tHabit) => {
@@ -73,6 +84,11 @@ export function HabitsProvider({ children }: Props) {
     habitWith.order = habits.length + 1;
     setHabits(habits?.concat(habitWith));
     localStorage.setItem("habits", JSON.stringify(habits));
+  };
+
+  const addActionLog = (actionLogItem: any) => {
+    setActionLog(actionLog?.concat(actionLogItem));
+    localStorage.setItem("actionLog", JSON.stringify(actionLog));
   };
 
   const editHabit = (habit: tHabit) => {
@@ -92,6 +108,8 @@ export function HabitsProvider({ children }: Props) {
     editHabit,
     deleteHabit,
     conditions,
+    actionLog,
+    addActionLog,
   };
 
   return (
