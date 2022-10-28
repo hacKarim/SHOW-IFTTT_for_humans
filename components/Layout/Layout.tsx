@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { ReactNode } from "react";
 import styles from "./Layout.module.css";
+import {TfiLoop, TfiHeartBroken, TfiBookmarkAlt} from "react-icons/tfi";
 
 type Props = {
   children: ReactNode;
@@ -18,13 +19,13 @@ const Layout = ({ children }: Props) => {
       <main className={styles.MainView}>{children}</main>
       <footer className={styles.Footer}>
         <Link href={"/"}>
-          <div>Habits</div>
+          <div><TfiLoop/></div>
         </Link>
         <Link href={"/conditions"}>
-          <div>What to do now ?</div>
+          <div><TfiHeartBroken /></div>
         </Link>
         <Link href={"/stats"}>
-          <div>Stats</div>
+          <div><TfiBookmarkAlt /></div>
         </Link>
       </footer>
     </div>
