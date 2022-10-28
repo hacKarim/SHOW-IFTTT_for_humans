@@ -74,14 +74,13 @@ export default function Habit(props: any) {
     cursor: "pointer",
     margin: "-20px 0px 0px -25px",
     opacity: "0.5",
-    position: "absolute",
   };
   const deleteButtonStylingHidden = {
     fontSize: "2em",
     fontWeight: "100",
     cursor: "pointer",
     margin: "-20px 0px 0px -25px",
-    opacity: "0",
+    visibility: "hidden",
   };
 
   return (
@@ -133,23 +132,17 @@ export default function Habit(props: any) {
                   );
                 }
               )}
-            <span style={textStyling}> : </span>
-          </div>
-        </div>
-        <div
-          style={
-            isHovering && !props.disabled
-              ? deleteButtonStyling
-              : deleteButtonStylingHidden
-          }
-          onClick={() => deleteHabit(props.habit.id)}
-        >
-          <FiDelete
+            <span style={textStyling}> : <FiDelete
             size={20}
             color={"darkred"}
-            style={{ transform: "rotate(180deg)" }}
-          />
+            style={{ cursor:"pointer", visibility: isHovering && !props.disabled ? "visible" : "hidden", marginBottom: "-3px" }}
+            onClick={() => deleteHabit(props.habit.id)}
+          /></span>
+
+          
+          </div>
         </div>
+       
         <div
           style={{
             width: "max-content",
