@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import dynamic from 'next/dynamic'
+
 import { useEffect, useState } from "react";
 import { useHabits } from "../../context/AppContext";
 import  BubbleUI  from "react-bubble-ui";
@@ -8,6 +10,7 @@ import "react-bubble-ui/dist/index.css";
 export default function Conditions() {
   const { addHabit, editHabit, deleteHabit, habits, conditions } = useHabits();
   const [selectedConditions, setSelectedConditions] = useState([]) as any;
+  const [bubbles, setBubbles] = useState([]) as any;
 
   const toggleSelection = (conditionTitle: any) => {
     if (selectedConditions.indexOf(conditionTitle) == -1) {
@@ -52,7 +55,11 @@ export default function Conditions() {
     height: "100vh",
   };
 
-  useEffect(() => {}, [conditions]);
+  useEffect(() => {
+    setBubbles(conditions.map((item :any, i:any) => {
+      return <CompanyBubble condition={item} key={i} backgroundColor={dummyColors[i % dummyColors.length]}/>;
+    }))
+  }, [conditions]);
 
   //   const getStockBubbles = () => {
   //     return conditions.map((conditionTitle: any, index: any) => {
@@ -63,17 +70,13 @@ export default function Conditions() {
   //   const stockBubbles = conditions.length != 0 && getStockBubbles();
   const dummyColors = ["#F79256", "#FBD1A2", "#7DCFB6", "#00B2CA", "#1D4E89"];
 
-  const getStockBubbles = () => {
-    return conditions.map((item :any, i:any) => {
-      return <CompanyBubble condition={item} key={i} backgroundColor={dummyColors[i % dummyColors.length]}/>;
-    });
-  };
-  const stockBubbles = getStockBubbles();
+    
 
+  if (conditions.length != 0)
   return (
     <>
       <BubbleUI className="bubbleUI" options={bubbleUiOptions} style={{height: "100vh", width: "100vw"}}>
-        {stockBubbles}
+        {bubbles}
       </BubbleUI>
     </>
   );
