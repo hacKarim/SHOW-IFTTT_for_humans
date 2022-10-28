@@ -20,8 +20,6 @@
     overflow-y: scroll;
     overflow-x: hidden;
     vertical-align: baseline;
-    padding-bottom: 190px;
-    height: 100vh;
 }
 
 .Footer {
@@ -29,10 +27,12 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
-    background: lime;
+    background: white;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    font-size: 50px;
+    font-size: 2em;
+    padding: 10px;
+    box-shadow: 1px 3px 20px 20px #00000010;
 }

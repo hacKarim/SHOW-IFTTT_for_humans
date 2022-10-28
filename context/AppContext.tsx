@@ -50,14 +50,17 @@ export function HabitsProvider({ children }: Props) {
     habits.forEach((habit: tHabit) => {
       conditionsTemp = conditionsTemp.concat(habit.conditions);
     });
-    
-    setConditions(Object.entries(conditionsTemp.reduce(function (r:any, a:any) {
-      r[a.title] = (r[a.title] || 0) + 1;
-      return r;
-  }, {})));
 
-    
+    setConditions(
+      Object.entries(
+        conditionsTemp.reduce(function (r: any, a: any) {
+          r[a.title] = (r[a.title] || 0) + 1;
+          return r;
+        }, {})
+      )
+    );
   }, [habits]);
+  
 
   useEffect(() => {
     typeof window !== "undefined" &&
