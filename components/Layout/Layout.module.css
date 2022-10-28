@@ -1,0 +1,37 @@
+.Root {
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "mainView"
+        "footer";
+
+    display: grid;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.MainView {
+    grid-area: mainView;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    vertical-align: baseline;
+    padding-bottom: 190px;
+    height: 100vh;
+}
+
+.Footer {
+    grid-area: footer;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background: lime;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50px;
+}

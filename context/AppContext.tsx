@@ -15,6 +15,7 @@ type habitsContextType = {
   addHabit: (habit: tHabit) => void;
   editHabit: (habit: tHabit) => void;
   deleteHabit: (id: string) => void;
+  conditions: any;
 };
 
 const appContextDefaultValues: habitsContextType = {
@@ -22,6 +23,7 @@ const appContextDefaultValues: habitsContextType = {
   addHabit: () => {},
   editHabit: () => {},
   deleteHabit: () => {},
+  conditions: [],
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -35,15 +37,27 @@ type Props = {
 };
 
 export function HabitsProvider({ children }: Props) {
-  // useEffect(() => {
-  //   setTasks(JSON.parse(localStorage.getItem("tasks")));
-  // }, []);
-
   const [habits, setHabits] = useState<any>(
     typeof window !== "undefined" && !localStorage.getItem("habits")
       ? localStorage.setItem("habits", JSON.stringify([]))
       : []
   );
+
+  const [conditions, setConditions] = useState<any>([]);
+
+  useEffect(() => {
+    let conditionsTemp: any = [];
+    habits.forEach((habit: tHabit) => {
+      conditionsTemp = conditionsTemp.concat(habit.conditions);
+    });
+    
+    setConditions(Object.entries(conditionsTemp.reduce(function (r:any, a:any) {
+      r[a.title] = (r[a.title] || 0) + 1;
+      return r;
+  }, {})));
+
+    
+  }, [habits]);
 
   useEffect(() => {
     typeof window !== "undefined" &&
@@ -74,6 +88,7 @@ export function HabitsProvider({ children }: Props) {
     addHabit,
     editHabit,
     deleteHabit,
+    conditions,
   };
 
   return (

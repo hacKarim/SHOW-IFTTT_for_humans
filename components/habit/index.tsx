@@ -17,7 +17,7 @@ export default function Habit(props: any) {
   const emptyAction: tAction = { title: "..." };
 
   useEffect(() => {
-    if (props.habit) {
+    if (props.habit && !props.disabled) {
       let habit = props.habit;
 
       habit.conditions = habit.conditions.filter(
@@ -72,14 +72,15 @@ export default function Habit(props: any) {
     fontSize: "2em",
     fontWeight: "100",
     cursor: "pointer",
-    margin: "0px 0px 0px 20px",
+    margin: "-20px 0px 0px -25px",
     opacity: "0.5",
+    position: "absolute",
   };
   const deleteButtonStylingHidden = {
     fontSize: "2em",
     fontWeight: "100",
     cursor: "pointer",
-    margin: "0px 0px 0px 20px",
+    margin: "-20px 0px 0px -25px",
     opacity: "0",
   };
 
@@ -114,7 +115,7 @@ export default function Habit(props: any) {
                       <span style={textStylingDimmed}>{" ( "}</span>
                       <ContentEditable
                         html={condition.title}
-                        disabled={false}
+                        disabled={props.disabled}
                         onChange={(e) => onChange(e, index, "condition")}
                         onFocus={(e) => onFocus(e, index, "condition")}
                         onBlur={(e) => onBlur(e, index, "condition")}
@@ -132,16 +133,30 @@ export default function Habit(props: any) {
                   );
                 }
               )}
-            <span style={textStyling}>: </span>
+            <span style={textStyling}> : </span>
           </div>
-         </div>
-         <div
+        </div>
+        <div
+          style={
+            isHovering && !props.disabled
+              ? deleteButtonStyling
+              : deleteButtonStylingHidden
+          }
+          onClick={() => deleteHabit(props.habit.id)}
+        >
+          <FiDelete
+            size={20}
+            color={"darkred"}
+            style={{ transform: "rotate(180deg)" }}
+          />
+        </div>
+        <div
           style={{
             width: "max-content",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            paddingLeft: "25px"
+            paddingLeft: "25px",
           }}
         >
           <div>
@@ -154,7 +169,7 @@ export default function Habit(props: any) {
                     <span style={textStylingDimmed}>{"{ "}</span>
                     <ContentEditable
                       html={action.title}
-                      disabled={false}
+                      disabled={props.disabled}
                       onChange={(e) => onChange(e, index, "action")}
                       onFocus={(e) => onFocus(e, index, "action")}
                       onBlur={(e) => onBlur(e, index, "action")}
@@ -169,12 +184,6 @@ export default function Habit(props: any) {
                   </span>
                 );
               })}
-          </div>
-          <div
-            style={isHovering ? deleteButtonStyling : deleteButtonStylingHidden}
-            onClick={() => deleteHabit(props.habit.id)}
-          >
-            <FiDelete size={20} color={"darkred"} />
           </div>
         </div>
       </div>

@@ -8,11 +8,12 @@ import Habit from "../components/habit";
 export default function Home() {
   const { addHabit, editHabit, deleteHabit, habits } = useHabits();
   const addHabitStyling = {
-    fontSize: "4em",
-    fontWeight: "700",
+    fontSize: "2em",
+    fontWeight: "500",
     cursor: "pointer",
     width: "100%",
     marginTop: "-10px",
+    padding: "10px"
   };
 
   const templateConditions = [
@@ -57,6 +58,22 @@ export default function Home() {
           templateActions[
             Math.floor(Math.random() * templateConditions.length)
           ],
+      },
+    ],
+  };
+
+  const emptyHabit: tHabit = {
+    id: undefined,
+    conditions: [
+      {
+        title:
+          "..."
+      },
+    ],
+    actions: [
+      {
+        title:
+          "..."
       },
     ],
   };
@@ -177,7 +194,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
-          {"{"}
+          {"const habits = ["}
         </div>
 
         <div>
@@ -193,15 +210,19 @@ export default function Home() {
           {habits &&
             habits
               .sort((a: any, b: any) =>
-                a.order < b.order ? 1 : a.order > b.order ? -1 : 0
+                a.order > b.order ? 1 : a.order < b.order ? -1 : 0
               )
               .map((habit: any, index: any) => {
                 return <Habit key={habit.id} habit={habit}></Habit>;
               })}
         </div>
+        <div  onClick={() => addHabit(simpleHabit)} style={{cursor:"pointer"}}>
+        <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
 
-        <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
-          {"}"}
+        </div>
+
+        <div style={addHabitStyling}>
+          {"];"}
         </div>
       </main>
     </div>
