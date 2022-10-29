@@ -216,7 +216,6 @@ export default function Home() {
                     height: "auto",
                     fontSize: "1.5em",
                     borderRadius: 10,
-                    marginRight: 30,
                   }}
                 >
                   Initialize Habits
