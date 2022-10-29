@@ -197,7 +197,7 @@ export default function Conditions() {
                     <br />
                     <div
                       style={{
-                        background: "#eeeeee",
+                        background: "#f7f7f7",
                         padding: "10px",
                         borderRadius: "10px",
                       }}
@@ -209,16 +209,16 @@ export default function Conditions() {
                       <h3>
                         {"then {"} {correspondingAction} {"};  "}
                       </h3>
-                      You did that{" "}
+                      x{" "}
                       {
                         actionLog.filter(
                           (actionLogItem: any) =>
                             actionLogItem.action == correspondingAction &&
                             JSON.stringify(actionLogItem.conditions.sort()) ==
                               JSON.stringify(selectedConditions.sort())
-                        ).length
-                      }{" "}
-                      times
+                        ).length + 1
+                      }
+                      
                     </div>
                     <br />
                     <br />

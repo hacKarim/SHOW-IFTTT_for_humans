@@ -210,7 +210,7 @@ export default function Home() {
                 style={{
                   cursor: "pointer",
                   width: "fit-content",
-                  background: "#eeeeee",
+                  background: "#f7f7f7",
                   color: "#666",
                   padding: 19,
                   height: "auto",

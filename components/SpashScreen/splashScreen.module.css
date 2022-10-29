@@ -11,9 +11,7 @@
   
   .slottt_machine_recipe {
     margin: 0px auto;
-    min-width: 700px;
-    transform: scale(.8);
-    margin-top: 50px;
+    transform: scale(.6);
   }
   
   .slottt_machine_recipe__mask {

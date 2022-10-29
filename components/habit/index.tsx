@@ -76,7 +76,8 @@ export default function Habit(props: any) {
           paddingLeft: 5,
           paddingRight: 5,
           height: "fit-content",
-          background: "#eeeeee",
+          background: "#f7f7f7",
+          padding: 10,
           borderRadius: "10px",
           width: props.disabled ? "fit-content" : "unset"
         }}

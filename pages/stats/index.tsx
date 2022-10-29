@@ -28,6 +28,9 @@ export default function Conditions() {
           alignItems: "stretch",
           alignContent: "center",
           marginTop: "2em",
+          fontSize: "1.5em",
+          fontWeight: "bold",
+          fontFamily:"monospace"
         }}
       >
         {actionLog.map((actionLogItem: any, index: any) => (
@@ -77,7 +80,7 @@ export default function Conditions() {
             <div>
               <TfiTrash
                 onClick={() => deleteActionLog(actionLogItem.timestamp)}
-                style={{ cursor: "pointer", color: "darkRed", marginBottom: "-5px" }}
+                style={{ cursor: "pointer", color: "darkRed", marginBottom: "-2px", marginLeft:"10px" }}
               />
             </div>
           </div>
