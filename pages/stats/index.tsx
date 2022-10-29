@@ -30,7 +30,6 @@ export default function Conditions() {
           marginTop: "2em",
           fontSize: "1.5em",
           fontWeight: "bold",
-          fontFamily:"monospace"
         }}
       >
         {actionLog.map((actionLogItem: any, index: any) => (
