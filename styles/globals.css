@@ -67,3 +67,7 @@ a {
       top: 0px !important;
       transform: none !important;
     }
+    .Toastify__close-button
+    {
+      display: none !important;
+    }
