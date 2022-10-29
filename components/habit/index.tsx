@@ -53,7 +53,6 @@ export default function Habit(props: any) {
     if (field == "action") {
       habit.actions[index].title = e.target.value.replace(/\<br\>/g, " ");
     }
-
     editHabit(habit);
   };
 

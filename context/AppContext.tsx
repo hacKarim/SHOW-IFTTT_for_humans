@@ -62,7 +62,7 @@ export function HabitsProvider({ children }: Props) {
   );
 
   const [conditions, setConditions] = useState<any>([]);
-  const [isEditingGlobal, setIsEditingGlobal] = useState<any>([]);
+  const [isEditingGlobal, setIsEditingGlobal] = useState<any>(false);
 
   useEffect(() => {
     let conditionsTemp: any = [];
