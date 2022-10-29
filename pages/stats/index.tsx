@@ -10,7 +10,7 @@ export default function Conditions() {
   
 
   if (actionLog.length == 0) {
-    return <div style={{marginTop: "2em", fontSize:"2em", textAlign: "center"}}><div style={{fontSize:"4em"}}>📜</div>You didn't start any activity yet.</div>;
+    return <div style={{marginTop: "2em", fontSize:"2em", textAlign: "center"}}><div style={{fontSize:"4em"}}>📜</div>{"You didn't start any activity yet."}</div>;
   }
 
   if (actionLog.length != 0)

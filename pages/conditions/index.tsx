@@ -3,11 +3,7 @@ import { useHabits } from "../../context/AppContext";
 import "react-bubble-ui/dist/index.css";
 import {
   ToastContainer,
-  toast,
-  Slide,
-  Zoom,
-  Flip,
-  Bounce,
+  toast
 } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -115,7 +111,7 @@ export default function Conditions() {
   if (conditions.length == 0) {
     return (
       <div style={{ marginTop: "2em", fontSize: "2em", textAlign: "center" }}>
-        <div style={{ fontSize: "4em" }}>🔁</div>You don't have any routines yet
+        <div style={{ fontSize: "4em" }}>🔁</div>{"You don't have any routines yet"}
       </div>
     );
   }
@@ -184,7 +180,7 @@ export default function Conditions() {
                         (actionLogItem: any) =>
                         (actionLogItem.action == correspondingAction && JSON.stringify(actionLogItem.conditions.sort()) == JSON.stringify(selectedConditions.sort()))
                       ).length
-                    }{" "}
+                    }
                     times
                     </div>
                     <br />
