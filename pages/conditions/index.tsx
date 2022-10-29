@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import { useHabits } from "../../context/AppContext";
 import "react-bubble-ui/dist/index.css";
-import { ToastContainer, toast, Slide, Zoom, Flip, Bounce  } from "react-toastify";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Conditions() {
-  const { habits, conditions, addActionLog } = useHabits();
+  const { habits, conditions, addActionLog, actionLog } = useHabits();
   const [selectedConditions, setselectedConditions] = useState([]) as any;
   const [correspondingActions, setCorrespondingActions] = useState([]) as any;
 
@@ -25,23 +32,23 @@ export default function Conditions() {
   const notify = (text: any) =>
     toast(text, {
       position: "bottom-center",
-      autoClose: 1000,
+      autoClose: false,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
       progress: undefined,
       theme: "light",
-      style:{
+      style: {
         fontSize: "2em",
-        width:"100vw",
+        width: "100vw",
         // left: "0%",
         height: "100vh",
         maxHeight: "unset",
         maxWidth: "unset",
         textAlign: "center",
-        margin:"0px"
-      }
+        margin: "0px",
+      },
     });
 
   const conditionStyling = {
@@ -105,6 +112,14 @@ export default function Conditions() {
     );
   }, [selectedConditions]);
 
+  if (conditions.length == 0) {
+    return (
+      <div style={{ marginTop: "2em", fontSize: "2em", textAlign: "center" }}>
+        <div style={{ fontSize: "4em" }}>🔁</div>You don't have any routines yet
+      </div>
+    );
+  }
+
   if (conditions.length != 0)
     return (
       <>
@@ -157,7 +172,27 @@ export default function Conditions() {
                   action: correspondingAction,
                   timestamp: Date.now(),
                 });
-                notify(<><div style={{fontSize:"4em"}}>🦄</div>Bravo 👏 for <br/><br/>[ {correspondingAction} ]</>);
+                notify(
+                  <div style={{maxWidth: "700px", margin:"0 auto"}}>
+                    <div style={{ fontSize: "4em" }}>🦄</div><h1>Bravo 👏</h1><br />
+                    <div style={{background: "#eeeeee", padding: "10px", borderRadius: "10px"}}>
+                    <h3>{"if ("} {selectedConditions.join(" & ")}{")"} </h3>
+                    <h3>{"then {"}  {correspondingAction} {"};  "}</h3>
+                    You did that{" "}
+                    {
+                      actionLog.filter(
+                        (actionLogItem: any) =>
+                        (actionLogItem.action == correspondingAction && JSON.stringify(actionLogItem.conditions.sort()) == JSON.stringify(selectedConditions.sort()))
+                      ).length
+                    }{" "}
+                    times
+                    </div>
+                    <br />
+                    <br />
+                    
+
+                  </div>
+                );
                 setselectedConditions([]);
               }}
             >

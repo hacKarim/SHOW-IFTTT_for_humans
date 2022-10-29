@@ -3,12 +3,16 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import styles from "./Layout.module.css";
 import { TfiLoop, TfiHeartBroken, TfiBookmarkAlt } from "react-icons/tfi";
+import { Badge } from "@nextui-org/react";
+import { useHabits } from "../../context/AppContext";
 
 type Props = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: Props) => {
+  const { actionLog } = useHabits();
+
   return (
     <div className={styles.Root}>
       <Head>
@@ -30,7 +34,9 @@ const Layout = ({ children }: Props) => {
         </Link>
         <Link href={"/stats"}>
           <div>
-            <TfiBookmarkAlt />
+            <Badge color="error" content={actionLog.length} isInvisible={actionLog.length == 0}>
+              <TfiBookmarkAlt />
+            </Badge>
           </div>
         </Link>
       </footer>

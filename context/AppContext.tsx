@@ -17,6 +17,7 @@ type habitsContextType = {
   conditions: any;
   actionLog: any;
   addActionLog: (actionLogItem: any) => void;
+  deleteActionLog: (timestamp: string) => void;
 };
 
 const appContextDefaultValues: habitsContextType = {
@@ -27,6 +28,7 @@ const appContextDefaultValues: habitsContextType = {
   conditions: [],
   actionLog: [],
   addActionLog: () => {},
+  deleteActionLog: () => {},
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -74,7 +76,7 @@ export function HabitsProvider({ children }: Props) {
     typeof window !== "undefined" &&
       setHabits(JSON.parse(localStorage.getItem("habits") as any));
     typeof window !== "undefined" &&
-      setConditions(JSON.parse(localStorage.getItem("actionLog") as any));
+      setActionLog(JSON.parse(localStorage.getItem("actionLog") as any));
   }, []);
 
   const addHabit = (habit: tHabit) => {
@@ -83,11 +85,6 @@ export function HabitsProvider({ children }: Props) {
     habitWith.order = habits.length + 1;
     setHabits(habits?.concat(habitWith));
     localStorage.setItem("habits", JSON.stringify(habits));
-  };
-
-  const addActionLog = (actionLogItem: any) => {
-    setActionLog(actionLog?.concat(actionLogItem));
-    localStorage.setItem("actionLog", JSON.stringify(actionLog));
   };
 
   const editHabit = (habit: tHabit) => {
@@ -101,6 +98,16 @@ export function HabitsProvider({ children }: Props) {
     localStorage.setItem("habits", JSON.stringify(habits));
   };
 
+  const addActionLog = (actionLogItem: any) => {
+    setActionLog(actionLog?.concat(actionLogItem));
+    localStorage.setItem("actionLog", JSON.stringify(actionLog));
+  };
+
+  const deleteActionLog = (timestamp: string) => {
+    setActionLog(actionLog.filter((actionLog:any)=> actionLog.timestamp != timestamp));
+    localStorage.setItem("actionLog", JSON.stringify(actionLog));
+  };
+
   const value = {
     habits,
     addHabit,
@@ -109,6 +116,7 @@ export function HabitsProvider({ children }: Props) {
     conditions,
     actionLog,
     addActionLog,
+    deleteActionLog
   };
 
   return (
