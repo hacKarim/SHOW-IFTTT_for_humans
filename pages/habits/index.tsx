@@ -79,7 +79,7 @@ export default function Home() {
           <div style={addHabitStyling}>{"const goodHabits = ["}</div>
           <div
             style={{
-              height: "calc(90vh - 70px)",
+              height: !isEditingGlobal ? "100vh" : "calc(90vh - 70px)",
               overflowY: "scroll",
               overflowX: "hidden",
             }}
