@@ -15,7 +15,6 @@ const Layout = ({ children }: Props) => {
   const { actionLog } = useHabits();
   const router = useRouter();
 
-
   return (
     <div className={styles.Root}>
       <Head>
@@ -24,25 +23,46 @@ const Layout = ({ children }: Props) => {
       </Head>
 
       <main className={styles.MainView}>{children}</main>
-      <footer className={styles.Footer}>
-        <Link href={"/habits"} style={{width: "inherit", textAlign: "center"}}>
-        <div >
-            <TfiLoop style={{color:router.pathname == "/habits" ? "black" : "grey"}}/>
-          </div>
-        </Link>
-        <Link href={"/conditions"} style={{width: "inherit",  textAlign: "center"}}>
+      <footer
+        className={styles.Footer}
+        style={{ display: router.pathname == "/" ? "none" : "flex" }}
+      >
+        <Link
+          href={"/habits"}
+          style={{ width: "inherit", textAlign: "center" }}
+        >
           <div>
-            <TfiHeartBroken  style={{color:router.pathname == "/conditions" ? "black" : "grey"}}/>
+            <TfiLoop
+              style={{
+                color: router.pathname == "/habits" ? "black" : "grey",
+              }}
+            />
           </div>
         </Link>
-        <Link href={"/stats"} style={{width: "inherit",  textAlign: "center"}}>
-        <div style={{marginTop: "-10px"}}>
+        <Link
+          href={"/conditions"}
+          style={{ width: "inherit", textAlign: "center" }}
+        >
+          <div>
+            <TfiHeartBroken
+              style={{
+                color: router.pathname == "/conditions" ? "black" : "grey",
+              }}
+            />
+          </div>
+        </Link>
+        <Link href={"/stats"} style={{ width: "inherit", textAlign: "center" }}>
+          <div style={{ marginTop: "-10px" }}>
             <Badge
               color="error"
               content={actionLog.length}
               isInvisible={actionLog.length == 0}
             >
-              <TfiBookmarkAlt  style={{color:router.pathname == "/stats" ? "black" : "grey"}}/>
+              <TfiBookmarkAlt
+                style={{
+                  color: router.pathname == "/stats" ? "black" : "grey",
+                }}
+              />
             </Badge>
           </div>
         </Link>
