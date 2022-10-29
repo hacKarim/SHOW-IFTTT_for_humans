@@ -7,7 +7,8 @@ import Habit from "../../components/habit";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const { addHabit, editHabit, deleteHabit, habits, initializeHabits } = useHabits();
+  const { addHabit, editHabit, deleteHabit, habits, initializeHabits, isEditingGlobal } =
+    useHabits();
   const addHabitStyling = {
     fontSize: "2em",
     fontWeight: "500",
@@ -129,7 +130,7 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div style={addHabitStyling}>{"];"}</div>
+          {!isEditingGlobal && <div style={addHabitStyling}>{"];"}</div>}
         </main>
       </div>
     </motion.div>
