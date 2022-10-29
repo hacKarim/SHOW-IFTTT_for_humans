@@ -11,7 +11,7 @@ export default function Index(props: any) {
       const tempHabits = habits;
       setTimeout(() => {
         tempHabits.length > 0 ? router.push("/conditions") : router.push("/habits");
-      }, 3000);
+      }, 300000);
   }, [habits]);
 
   return (
