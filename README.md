@@ -5,10 +5,11 @@ A simple IF... THEN... planner for humans. It aims to help track and convert bad
 At the time of writing, the only If Then planner was in Korean, so I decided to make my own.
 
 ## Screenshots
-
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="200" style="float:left;"/>
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/2.png" alt="drawing" width="200" style="float:left;"/>
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/3.png" alt="drawing" width="200";"/>
+<p float="left">
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="200" />
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/2.png" alt="drawing" width="200" />
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/3.png" alt="drawing" width="200"/>
+</p>
 
 ## Link
 
