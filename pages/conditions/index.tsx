@@ -120,7 +120,7 @@ export default function Conditions() {
       <div
         style={{
           height: "100vh",
-          display: selectedConditions.length == 0 ? "flex" : "block",
+          display: "block",
         }}
       >
         <div
