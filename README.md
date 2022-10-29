@@ -2,18 +2,24 @@
 
 A simple IF... THEN... planner for humans. It aims to help track and convert bad habits into good ones.
 
-At the time of writing, the only If Then planner was in Korean, so I decided to make my own.
-
-## Screenshots
-<p float="left">
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="250" />
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/2.png" alt="drawing" width="250" />
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/3.png" alt="drawing" width="250"/>
-</p>
 
 ## Link
 
 https://guelguin.github.io/IFTTT/
+
+
+
+## Features
+
+- Privacy focused: all your data is stored loclly.
+- An notion inspired, developer-perspective UI, for writing habits.
+- A condition selector, that returns the most relevant actions to do next.
+
+## Tech Stack
+
+**Client:** React, Next JS, TypeScript
+
+**Server:** NONE (Privacy! remember?)
 
 # Habits 101
 
@@ -48,21 +54,7 @@ Here's a quick summary of the science of forming habits, paraphrased from the Br
 
 Be patient! Mind-training takes time, but it's worth it.
 
-### Hang on, my guard dog wants to say something:
 
-> 🐺 We just spent 1800+ words and we haven't actually given the reader any practical mental health tips! We're wasting their time!
-
-## Features
-
-- Privacy focused: all your data is stored loclly.
-- An notion inspired, developer-perspective UI, for writing habits.
-- A condition selector, that returns the most relevant actions to do next.
-
-## Tech Stack
-
-**Client:** React, Next JS, TypeScript
-
-**Server:** NONE (Privacy! remember?)
 
 # 9 Evidence-Based Mental Health Habits
 
@@ -198,12 +190,6 @@ Social needs.
 Becoming a better person.
 
 What helps you meet _all_ of these at the same time: **making fear your friend.** Building a healthier collaboration with your fear (know the wolf) will help you get better at protecting yourself (physical needs), be more vulnerable with trusted friends (social needs), and let you improve your moral character ("becoming a better person" needs).
-
-Hang on, my friend wants to say something:
-
-> 🐺 Gah! We've blabbered on for 3500+ words! How's a reader supposed to remember any of this?!
-
-Good point! Let's refresh the reader's memory with a summary:
 
 ---
 
