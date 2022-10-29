@@ -8,6 +8,7 @@ import {
 
 import { tHabit, tHabits } from "../helpers";
 import { UUID } from "../helpers";
+import { initialHabits } from "../helpers/initialHabits";
 
 type habitsContextType = {
   habits: tHabits;
@@ -18,6 +19,7 @@ type habitsContextType = {
   actionLog: any;
   addActionLog: (actionLogItem: any) => void;
   deleteActionLog: (timestamp: string) => void;
+  initializeHabits: () => void;
 };
 
 const appContextDefaultValues: habitsContextType = {
@@ -29,6 +31,7 @@ const appContextDefaultValues: habitsContextType = {
   actionLog: [],
   addActionLog: () => {},
   deleteActionLog: () => {},
+  initializeHabits: () => {},
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -105,6 +108,16 @@ export function HabitsProvider({ children }: Props) {
     localStorage.setItem("habits", JSON.stringify(habits));
   };
 
+  const initializeHabits = (id: String) => {
+    setHabits(
+      initialHabits.map((habit: any, index: any) => {
+        habit.order = index;
+        return habit;
+      })
+    );
+    localStorage.setItem("habits", JSON.stringify(habits));
+  };
+
   const addActionLog = (actionLogItem: any) => {
     setActionLog(actionLog?.concat(actionLogItem));
     localStorage.setItem("actionLog", JSON.stringify(actionLog));
@@ -126,6 +139,7 @@ export function HabitsProvider({ children }: Props) {
     actionLog,
     addActionLog,
     deleteActionLog,
+    initializeHabits,
   };
 
   return (

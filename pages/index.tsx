@@ -7,9 +7,7 @@ export default function Index(props: any) {
   const { habits } = useHabits();
 
   useEffect(() => {
-    console.log(habits);
-
-    habits.length != 0 ? router.push("/conditions") : router.push("/habits");
+      habits.length != 0 ? router.push("/conditions") : router.push("/habits");
   }, [habits]);
 
   return <></>;

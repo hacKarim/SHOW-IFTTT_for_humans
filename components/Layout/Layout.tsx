@@ -5,6 +5,7 @@ import styles from "./Layout.module.css";
 import { TfiLoop, TfiHeartBroken, TfiBookmarkAlt } from "react-icons/tfi";
 import { Badge } from "@nextui-org/react";
 import { useHabits } from "../../context/AppContext";
+import { useRouter } from "next/router";
 
 type Props = {
   children: ReactNode;
@@ -12,6 +13,8 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const { actionLog } = useHabits();
+  const router = useRouter();
+
 
   return (
     <div className={styles.Root}>
@@ -22,20 +25,24 @@ const Layout = ({ children }: Props) => {
 
       <main className={styles.MainView}>{children}</main>
       <footer className={styles.Footer}>
-        <Link href={"/habits"}>
-          <div>
-            <TfiLoop />
+        <Link href={"/habits"} style={{width: "inherit", textAlign: "center"}}>
+        <div >
+            <TfiLoop style={{color:router.pathname == "/habits" ? "black" : "grey"}}/>
           </div>
         </Link>
-        <Link href={"/conditions"}>
+        <Link href={"/conditions"} style={{width: "inherit",  textAlign: "center"}}>
           <div>
-            <TfiHeartBroken />
+            <TfiHeartBroken  style={{color:router.pathname == "/conditions" ? "black" : "grey"}}/>
           </div>
         </Link>
-        <Link href={"/stats"}>
-          <div>
-            <Badge color="error" content={actionLog.length} isInvisible={actionLog.length == 0}>
-              <TfiBookmarkAlt />
+        <Link href={"/stats"} style={{width: "inherit",  textAlign: "center"}}>
+        <div style={{marginTop: "-10px"}}>
+            <Badge
+              color="error"
+              content={actionLog.length}
+              isInvisible={actionLog.length == 0}
+            >
+              <TfiBookmarkAlt  style={{color:router.pathname == "/stats" ? "black" : "grey"}}/>
             </Badge>
           </div>
         </Link>

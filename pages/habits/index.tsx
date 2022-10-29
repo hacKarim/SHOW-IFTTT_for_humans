@@ -6,7 +6,8 @@ import { tHabit, tHabits, tAction, tCondition } from "../../helpers";
 import Habit from "../../components/habit";
 
 export default function Home() {
-  const { addHabit, editHabit, deleteHabit, habits } = useHabits();
+  const { addHabit, editHabit, deleteHabit, habits, initializeHabits } =
+    useHabits();
   const addHabitStyling = {
     fontSize: "2em",
     fontWeight: "500",
@@ -169,7 +170,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
-          {"const habits = ["}
+          {"const goodHabits = ["}
         </div>
 
         <div></div>
@@ -184,10 +185,44 @@ export default function Home() {
               })}
         </div>
         <div
-          onClick={() => addHabit(simpleHabit)}
-          style={{ cursor: "pointer", width: "fit-content" }}
+          style={{
+            display: "flex",
+            flexWrap: "nowrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
-          <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
+          <div
+            onClick={() => addHabit(simpleHabit)}
+            style={{ cursor: "pointer", width: "fit-content" }}
+          >
+            <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
+          </div>
+          {habits.length == 0 && (
+            <>
+              <div style={{ fontSize: "1.5em", fontFamily: "monospace" }}>
+                {" "}
+                OR{" "}
+              </div>
+
+              <div
+                onClick={() => initializeHabits()}
+                style={{
+                  cursor: "pointer",
+                  width: "fit-content",
+                  background: "#eeeeee",
+                  color: "#666",
+                  padding: 19,
+                  height: "auto",
+                  fontSize: "1.5em",
+                  borderRadius: 10,
+                  marginRight: 30,
+                }}
+              >
+                Initialize Habits
+              </div>
+            </>
+          )}
         </div>
 
         <div style={addHabitStyling}>{"];"}</div>

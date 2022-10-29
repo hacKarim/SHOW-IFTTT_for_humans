@@ -9,7 +9,6 @@ export type tHabit = {
 
 export type tAction = {
   title: string;
-  status?: string;
 };
 
 export type tCondition = {
