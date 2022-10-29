@@ -20,6 +20,8 @@ const Layout = ({ children }: Props) => {
       <Head>
         <title>{"{...ifttt}"}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#fff" />
       </Head>
 
       <main className={styles.MainView}>{children}</main>
