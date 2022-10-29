@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHabits } from "../../context/AppContext";
 import "react-bubble-ui/dist/index.css";
-import {
-  ToastContainer,
-  toast
-} from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -111,7 +108,8 @@ export default function Conditions() {
   if (conditions.length == 0) {
     return (
       <div style={{ marginTop: "2em", fontSize: "2em", textAlign: "center" }}>
-        <div style={{ fontSize: "4em" }}>🔁</div>{"You don't have any routines yet"}
+        <div style={{ fontSize: "4em" }}>🔁</div>
+        {"You don't have any routines yet"}
       </div>
     );
   }
@@ -169,24 +167,37 @@ export default function Conditions() {
                   timestamp: Date.now(),
                 });
                 notify(
-                  <div style={{maxWidth: "700px", margin:"0 auto"}}>
-                    <div style={{ fontSize: "4em" }}>🦄</div><h1>Bravo 👏</h1><br />
-                    <div style={{background: "#eeeeee", padding: "10px", borderRadius: "10px"}}>
-                    <h3>{"if ("} {selectedConditions.join(" & ")}{")"} </h3>
-                    <h3>{"then {"}  {correspondingAction} {"};  "}</h3>
-                    You did that{" "}
-                    {
-                      actionLog.filter(
-                        (actionLogItem: any) =>
-                        (actionLogItem.action == correspondingAction && JSON.stringify(actionLogItem.conditions.sort()) == JSON.stringify(selectedConditions.sort()))
-                      ).length
-                    }
-                    times
+                  <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+                    <div style={{ fontSize: "4em" }}>🦄</div>
+                    <h1>Bravo 👏</h1>
+                    <br />
+                    <div
+                      style={{
+                        background: "#eeeeee",
+                        padding: "10px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <h3>
+                        {"if ("} {selectedConditions.join(" & ")}
+                        {")"}{" "}
+                      </h3>
+                      <h3>
+                        {"then {"} {correspondingAction} {"};  "}
+                      </h3>
+                      You did that{" "}
+                      {
+                        actionLog.filter(
+                          (actionLogItem: any) =>
+                            actionLogItem.action == correspondingAction &&
+                            JSON.stringify(actionLogItem.conditions.sort()) ==
+                              JSON.stringify(selectedConditions.sort())
+                        ).length
+                      }
+                      times
                     </div>
                     <br />
                     <br />
-                    
-
                   </div>
                 );
                 setselectedConditions([]);
