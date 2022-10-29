@@ -12,7 +12,7 @@ type habitsContextType = {
   conditions: any;
   actionLog: any;
   addActionLog: (actionLogItem: any) => void;
-  deleteActionLog: (timestamp: string) => void;
+  deleteActionLog: (timestamp: any) => void;
   initializeHabits: () => void;
   isEditingGlobal: any;
   setIsEditingGlobalState: (value: boolean) => void;
@@ -84,46 +84,49 @@ export function HabitsProvider({ children }: Props) {
     let habitWith = habit;
     habitWith.id = UUID();
     habitWith.order = habits.length + 1;
-    setHabits(habits?.concat(habitWith));
-    localStorage.setItem("habits", JSON.stringify(habits));
+    const tempHabits = habits?.concat(habitWith);
+
+    setHabits(tempHabits);
+    localStorage.setItem("habits", JSON.stringify(tempHabits));
   };
 
   const editHabit = (habit: tHabit) => {
     let habitsFiltered = habits.filter((e: any) => e.id != habit.id);
-    setHabits(habitsFiltered.concat(habit));
-    localStorage.setItem("habits", JSON.stringify(habits));
+    const tempHabits = habitsFiltered.concat(habit);
+    setHabits(tempHabits);
+    localStorage.setItem("habits", JSON.stringify(tempHabits));
   };
 
   const deleteHabit = (id: String) => {
-    setHabits(
-      habits
-        .filter((habit: any) => habit.id != id)
-        .map((habit: any, index: any) => {
-          habit.order = index;
-          return habit;
-        })
-    );
-    localStorage.setItem("habits", JSON.stringify(habits));
+    const tempHabits = habits
+      .filter((habit: any) => habit.id != id)
+      .map((habit: any, index: any) => {
+        habit.order = index;
+        return habit;
+      });
+    setHabits(tempHabits);
+    localStorage.setItem("habits", JSON.stringify(tempHabits));
   };
 
   const initializeHabits = () => {
-    setHabits(
-      initialHabits.map((habit: any, index: any) => {
-        habit.order = index;
-        return habit;
-      })
-    );
-    localStorage.setItem("habits", JSON.stringify(habits));
+    const tempHabits = initialHabits.map((habit: any, index: any) => {
+      habit.order = index;
+      return habit;
+    });
+    setHabits(tempHabits);
+    localStorage.setItem("habits", JSON.stringify(tempHabits));
   };
 
   const addActionLog = (actionLogItem: any) => {
-    setActionLog(actionLog?.concat(actionLogItem));
-    localStorage.setItem("actionLog", JSON.stringify(actionLog));
+    const tempActionLog = actionLog?.concat(actionLogItem);
+    setActionLog(tempActionLog);
+    localStorage.setItem("actionLog", JSON.stringify(tempActionLog));
   };
 
-  const deleteActionLog = (timestamp: string) => {
-    setActionLog(actionLog.filter((actionLog: any) => actionLog.timestamp != timestamp));
-    localStorage.setItem("actionLog", JSON.stringify(actionLog));
+  const deleteActionLog = (timestamp: any) => {
+    const tempActionLog = actionLog.filter((actionLog: any) => actionLog.timestamp != timestamp);
+    setActionLog(tempActionLog);
+    localStorage.setItem("actionLog", JSON.stringify(tempActionLog));
   };
 
   const setIsEditingGlobalState = (value: any) => {

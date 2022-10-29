@@ -62,46 +62,24 @@ export default function Stats() {
             >
               <div
                 style={{
-                  width: "40%",
-                  textOverflow: "ellipsis",
+                  width: "100%",
                   whiteSpace: "nowrap",
-                  overflow: "hidden",
+                  overflow: "scroll",
                 }}
               >
-                {actionLogItem.conditions}
-              </div>
-              <div
-                style={{
-                  width: "30%",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                }}
-              >
-                {actionLogItem.action}
-              </div>
-              <div
-                style={{
-                  width: "30%",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textAlign: "right",
-                }}
-              >
-                {moment(actionLogItem.timestamp).fromNow()}
-              </div>
-              <div>
-                <TfiTrash
+                [{moment(actionLogItem.timestamp).fromNow()}]
+                - {actionLogItem.conditions} ⚔️ {actionLogItem.action} <TfiTrash
                   onClick={() => deleteActionLog(actionLogItem.timestamp)}
                   style={{
                     cursor: "pointer",
                     color: "darkRed",
-                    marginBottom: "-2px",
+                    marginBottom: "-3px",
                     marginLeft: "10px",
                   }}
                 />
               </div>
+
+
             </div>
           ))}
         </div>

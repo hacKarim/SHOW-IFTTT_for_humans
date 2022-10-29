@@ -80,7 +80,7 @@ export default function Home() {
           <div
             style={{
               height: !isEditingGlobal ? "calc(100vh - 160px)" : "calc(100vh - 50px)",
-              overflowY: "scroll",
+              // overflowY: "scroll",
               overflowX: "hidden",
             }}
           >
