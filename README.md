@@ -12,14 +12,13 @@ https://guelguin.github.io/IFTTT/
 ## Features
 
 - Privacy focused: all your data is stored loclly.
-- An notion inspired, developer-perspective UI, for writing habits.
-- A condition selector, that returns the most relevant actions to do next.
+- A notion inspired planner for writing habits and sticking to them.
+- A condition selector, that returns the most relevant habit.
 
 ## Tech Stack
 
-**Client:** React, Next JS, TypeScript
+I just threw a bunch of code into Next JS with TypeScript, and it works.
 
-**Server:** NONE (Privacy! remember?)
 
 # Habits 101
 
@@ -212,11 +211,9 @@ What helps you meet _all_ of these at the same time: **making fear your friend.*
 # Extra Resources:
 
 More mental health tips from: [Mental Health Foundation](https://www.mentalhealth.org.uk/your-mental-health/looking-after-your-mental-health) & [National Health Service](https://www.nhs.uk/conditions/stress-anxiety-depression/improve-mental-wellbeing/)
-
 [Feeling Good](https://www.indiebound.org/book/9780380810338), the classic 1980 book that popularized CBT.  
 [Man's Search for Meaning](https://www.indiebound.org/book/9780807014295), a 1946 book written by a Holocaust survivor & psychotherapist.  
 [Meditation 101](https://www.youtube.com/watch?v=rqoxYKtEWEc), a 2-minute animation.
-
 [ncase](https://ncase.me/mental-health/), the author of the ressources in the readme
 
 ・・・
