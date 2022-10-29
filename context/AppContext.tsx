@@ -20,6 +20,8 @@ type habitsContextType = {
   addActionLog: (actionLogItem: any) => void;
   deleteActionLog: (timestamp: string) => void;
   initializeHabits: () => void;
+  isEditingGlobal: any;
+  setIsEditingGlobalState: (value: boolean) => void;
 };
 
 const appContextDefaultValues: habitsContextType = {
@@ -32,6 +34,8 @@ const appContextDefaultValues: habitsContextType = {
   addActionLog: () => {},
   deleteActionLog: () => {},
   initializeHabits: () => {},
+  isEditingGlobal: Boolean,
+  setIsEditingGlobalState: ()=>{},
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -58,6 +62,7 @@ export function HabitsProvider({ children }: Props) {
   );
 
   const [conditions, setConditions] = useState<any>([]);
+  const [isEditingGlobal, setIsEditingGlobal] = useState<any>([]);
 
   useEffect(() => {
     let conditionsTemp: any = [];
@@ -130,6 +135,11 @@ export function HabitsProvider({ children }: Props) {
     localStorage.setItem("actionLog", JSON.stringify(actionLog));
   };
 
+  const setIsEditingGlobalState = (value: any) =>
+  {
+    setIsEditingGlobal(value);
+  }
+
   const value = {
     habits,
     addHabit,
@@ -140,6 +150,8 @@ export function HabitsProvider({ children }: Props) {
     addActionLog,
     deleteActionLog,
     initializeHabits,
+    isEditingGlobal,
+    setIsEditingGlobalState
   };
 
   return (

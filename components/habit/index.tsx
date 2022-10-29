@@ -6,7 +6,7 @@ import { useHabits } from "../../context/AppContext";
 
 import { FiDelete } from "react-icons/fi";
 export default function Habit(props: any) {
-  const { editHabit, deleteHabit } = useHabits();
+  const { editHabit, deleteHabit, setIsEditingGlobalState} = useHabits();
 
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -34,9 +34,15 @@ export default function Habit(props: any) {
     }
   }, [isHovering, isEditing]);
 
-  const onFocus = (e: any, index: any, field: string) => {};
+  const onFocus = (e: any, index: any, field: string) => {
+    setIsEditing(true);
+    setIsEditingGlobalState(true);
+  };
 
-  const onBlur = (e: any, index: any, field: string) => {};
+  const onBlur = (e: any, index: any, field: string) => {
+    setIsEditing(false);
+    setIsEditingGlobalState(false);
+  };
 
   const onChange = (e: any, index: any, field: string) => {
     let habit = { ...props.habit };
@@ -49,7 +55,6 @@ export default function Habit(props: any) {
     }
 
     editHabit(habit);
-    setIsEditing(false);
   };
 
   const textStyling = { fontSize: "1.5em", fontWeight: "400", opacity: "0.5" };
