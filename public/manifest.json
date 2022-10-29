@@ -1,7 +1,7 @@
 {
     "name": "IFTTT [for humans]",
     "short_name": "IFTTT",
-    "start_url": "https://guelguin.github.io/IFTTT/",
+    "start_url": "/IFTTT/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
