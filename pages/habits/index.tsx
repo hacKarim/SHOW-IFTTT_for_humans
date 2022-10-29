@@ -11,7 +11,7 @@ export default function Home() {
   const addHabitStyling = {
     fontSize: "2em",
     fontWeight: "500",
-    cursor: "pointer",
+    // cursor: "pointer",
     width: "100%",
     marginTop: "-10px",
     padding: "10px",
@@ -172,59 +172,59 @@ export default function Home() {
         <div onClick={() => addHabit(simpleHabit)} style={addHabitStyling}>
           {"const goodHabits = ["}
         </div>
-
-        <div></div>
-        <div>
-          {habits &&
-            habits
-              .sort((a: any, b: any) =>
-                a.order > b.order ? 1 : a.order < b.order ? -1 : 0
-              )
-              .map((habit: any, index: any) => {
-                return <Habit key={habit.id} habit={habit}></Habit>;
-              })}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "nowrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            onClick={() => addHabit(simpleHabit)}
-            style={{ cursor: "pointer", width: "fit-content" }}
-          >
-            <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
+        <div style={{ height: "calc(90vh - 70px)", overflowY: "scroll", overflowX:"hidden",}}>
+          <div></div>
+          <div >
+            {habits &&
+              habits
+                .sort((a: any, b: any) =>
+                  a.order > b.order ? 1 : a.order < b.order ? -1 : 0
+                )
+                .map((habit: any, index: any) => {
+                  return <Habit key={habit.id} habit={habit}></Habit>;
+                })}
           </div>
-          {habits.length == 0 && (
-            <>
-              <div style={{ fontSize: "1.5em", fontFamily: "monospace" }}>
-                {" "}
-                OR{" "}
-              </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <div
+              onClick={() => addHabit(simpleHabit)}
+              style={{ cursor: "pointer", width: "fit-content" }}
+            >
+              <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
+            </div>
+            {habits.length == 0 && (
+              <>
+                <div style={{ fontSize: "1.5em", fontFamily: "monospace" }}>
+                  {" "}
+                  OR{" "}
+                </div>
 
-              <div
-                onClick={() => initializeHabits()}
-                style={{
-                  cursor: "pointer",
-                  width: "fit-content",
-                  background: "#f7f7f7",
-                  color: "#666",
-                  padding: 19,
-                  height: "auto",
-                  fontSize: "1.5em",
-                  borderRadius: 10,
-                  marginRight: 30,
-                }}
-              >
-                Initialize Habits
-              </div>
-            </>
-          )}
+                <div
+                  onClick={() => initializeHabits()}
+                  style={{
+                    cursor: "pointer",
+                    width: "fit-content",
+                    background: "#f7f7f7",
+                    color: "#666",
+                    padding: 19,
+                    height: "auto",
+                    fontSize: "1.5em",
+                    borderRadius: 10,
+                    marginRight: 30,
+                  }}
+                >
+                  Initialize Habits
+                </div>
+              </>
+            )}
+          </div>
         </div>
-
         <div style={addHabitStyling}>{"];"}</div>
       </main>
     </div>

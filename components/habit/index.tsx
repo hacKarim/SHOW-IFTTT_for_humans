@@ -71,7 +71,7 @@ export default function Habit(props: any) {
       <div
         style={{
           overflow: "hidden",
-          margin: "10px 10px 10px 40px",
+          margin: "10px 10px 10px 10px",
           overflowX: "scroll",
           paddingLeft: 5,
           paddingRight: 5,
