@@ -35,4 +35,7 @@
     font-size: 2em;
     padding: 10px;
     box-shadow: 1px 3px 20px 20px #00000010;
+    position: fixed;
+    height: 60px;
+    top: calc(100vh - 60px);
 }
