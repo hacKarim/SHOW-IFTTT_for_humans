@@ -150,6 +150,7 @@ export default function Habit(props: any) {
             flexDirection: "row",
             alignItems: "center",
             paddingLeft: "25px",
+            marginTop: "10px"
           }}
         >
           <div>
