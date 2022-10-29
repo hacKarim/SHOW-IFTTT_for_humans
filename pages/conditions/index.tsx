@@ -52,7 +52,8 @@ export default function Conditions() {
     padding: "10px",
     border: "2px solid #ccc",
     borderRadius: "10px",
-    placeContent: "center",
+    width: "fit-content",
+    whiteSpace: "nowrap" as "nowrap",
   };
 
   const actionStyling = {
@@ -70,22 +71,21 @@ export default function Conditions() {
     margin: "0 auto",
     placeContent: "center space-between",
     alignItems: "center",
-    height: selectedConditions.length > 0 ? "20vh" : "45vh",
-    flexWrap: "wrap",
-    flexDirection: "row",
+    // flexDirection: "row",
     alignContent: "center",
     justifyContent: "center",
+    overflow: "scroll",
   };
   const actionContainerStyling = {
     display: "flex",
     margin: "0 auto",
     placeContent: "center flex-start",
     alignItems: "stretch",
-    height: selectedConditions.length > 0 ? "80vh" : "45vh",
     flexWrap: "nowrap",
     flexDirection: "column",
     justifyContent: "flex-start",
     maxWidth: "700px",
+    overflow: "scroll",
   };
 
   useEffect(() => {
@@ -117,8 +117,24 @@ export default function Conditions() {
 
   if (conditions.length != 0)
     return (
-      <>
-        <div style={containerStyling as React.CSSProperties}>
+      <div
+        style={{
+          height: "100vh",
+          display: selectedConditions.length == 0 ? "flex" : "block",
+        }}
+      >
+        <div
+          style={
+            {
+              ...containerStyling,
+              ...{
+                flexWrap: selectedConditions.length == 0 ? "wrap" : "unset",
+                placeContent:
+                  selectedConditions.length == 0 ? "center" : "unset",
+              },
+            } as React.CSSProperties
+          }
+        >
           {conditions.map((conditionTitle: any, index: any) => (
             <div
               key={index}
@@ -143,13 +159,20 @@ export default function Conditions() {
                 toggleSelection(conditionTitle[0]);
               }}
             >
-              {conditionTitle[0]}
+              <p style={{ textAlign: "center", margin: "0px" }}>
+                {conditionTitle[0]}
+              </p>
             </div>
           ))}
         </div>
         {correspondingActions.length > 0 && (
           <div
-            style={{ textAlign: "center", fontWeight: "500", fontSize: "2em" }}
+            style={{
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2em",
+              marginTop: "50px",
+            }}
           >
             You should do something:{" "}
           </div>
@@ -209,6 +232,6 @@ export default function Conditions() {
           ))}
         </div>
         <ToastContainer />
-      </>
+      </div>
     );
 }
