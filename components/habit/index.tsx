@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ContentEditable from "react-contenteditable";
 import { tAction, tCondition } from "../../helpers";
+import { motion } from "framer-motion";
 
 import { useHabits } from "../../context/AppContext";
 
 import { FiDelete } from "react-icons/fi";
 export default function Habit(props: any) {
-  const { editHabit, deleteHabit, setIsEditingGlobalState} = useHabits();
+  const { editHabit, deleteHabit, setIsEditingGlobalState } = useHabits();
 
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -19,8 +20,7 @@ export default function Habit(props: any) {
       let habit = props.habit;
 
       habit.conditions = habit.conditions.filter(
-        (condition: tCondition) =>
-          condition.title != "..." && condition.title != ""
+        (condition: tCondition) => condition.title != "..." && condition.title != ""
       );
       habit.actions = habit.actions.filter(
         (action: tAction) => action.title != "..." && action.title != ""
@@ -71,115 +71,110 @@ export default function Habit(props: any) {
   };
 
   return (
-    <>
+    <div
+      style={{
+        overflow: "hidden",
+        margin: "10px 10px 10px 10px",
+        overflowX: "scroll",
+        paddingLeft: 5,
+        paddingRight: 5,
+        height: "fit-content",
+        background: "#f7f7f7",
+        padding: 10,
+        borderRadius: "10px",
+        width: props.disabled ? "fit-content" : "unset",
+      }}
+      onMouseOver={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       <div
         style={{
-          overflow: "hidden",
-          margin: "10px 10px 10px 10px",
-          overflowX: "scroll",
-          paddingLeft: 5,
-          paddingRight: 5,
-          height: "fit-content",
-          background: "#f7f7f7",
-          padding: 10,
-          borderRadius: "10px",
-          width: props.disabled ? "fit-content" : "unset"
+          width: "max-content",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
         }}
-        onMouseOver={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
       >
-        <div
-          style={{
-            width: "max-content",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <div>
-            <span style={textStyling}>if</span>
-            {props.habit &&
-              props.habit.conditions.map(
-                (condition: tCondition, index: any) => {
-                  return (
-                    <span key={index}>
-                      <span style={textStylingDimmed}>{" ( "}</span>
-                      <ContentEditable
-                        html={condition.title}
-                        disabled={props.disabled}
-                        onChange={(e) => onChange(e, index, "condition")}
-                        onFocus={(e) => onFocus(e, index, "condition")}
-                        onBlur={(e) => onBlur(e, index, "condition")}
-                        tagName="span"
-                        style={{ ...textStyling, ...editableStyling }}
-                        key={index}
-                      />
+        <div>
+          <span style={textStyling}>if</span>
+          {props.habit &&
+            props.habit.conditions.map((condition: tCondition, index: any) => {
+              return (
+                <span key={index}>
+                  <span style={textStylingDimmed}>{" ( "}</span>
+                  <ContentEditable
+                    html={condition.title}
+                    disabled={props.disabled}
+                    onChange={(e) => onChange(e, index, "condition")}
+                    onFocus={(e) => onFocus(e, index, "condition")}
+                    onBlur={(e) => onBlur(e, index, "condition")}
+                    tagName="span"
+                    style={{ ...textStyling, ...editableStyling }}
+                    key={index}
+                  />
 
-                      <span style={textStylingDimmed}>{" )"}</span>
+                  <span style={textStylingDimmed}>{" )"}</span>
 
-                      <span style={textStyling}>
-                        {props.habit.conditions.length != index + 1 && <> & </>}
-                      </span>
-                    </span>
-                  );
-                }
-              )}
-            <span style={textStyling}>
-              {" "}
-              :{" "}
-              <FiDelete
-                size={20}
-                color={"darkred"}
-                style={{
-                  cursor: "pointer",
-                  visibility:
-                    isHovering && !props.disabled ? "visible" : "hidden",
-                  marginBottom: "-3px",
-                }}
-                onClick={() => deleteHabit(props.habit.id)}
-              />
-            </span>
-          </div>
-        </div>
-
-        <div
-          style={{
-            width: "max-content",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            paddingLeft: "25px",
-            marginTop: "10px"
-          }}
-        >
-          <div>
-            <span style={textStyling}>then </span>
-
-            {props.habit &&
-              props.habit.actions.map((action: tAction, index: any) => {
-                return (
-                  <span key={index}>
-                    <span style={textStylingDimmed}>{"{ "}</span>
-                    <ContentEditable
-                      html={action.title}
-                      disabled={props.disabled}
-                      onChange={(e) => onChange(e, index, "action")}
-                      onFocus={(e) => onFocus(e, index, "action")}
-                      onBlur={(e) => onBlur(e, index, "action")}
-                      tagName="span"
-                      style={{ ...textStyling, ...editableStyling }}
-                    />
-
-                    <span style={textStylingDimmed}>{" }"}</span>
-                    <span style={textStyling}>
-                      {props.habit.actions.length != index + 1 && <> & </>}
-                    </span>
+                  <span style={textStyling}>
+                    {props.habit.conditions.length != index + 1 && <> & </>}
                   </span>
-                );
-              })}
-          </div>
+                </span>
+              );
+            })}
+          <span style={textStyling}>
+            {" "}
+            :{" "}
+            <FiDelete
+              size={20}
+              color={"darkred"}
+              style={{
+                cursor: "pointer",
+                visibility: isHovering && !props.disabled ? "visible" : "hidden",
+                marginBottom: "-3px",
+              }}
+              onClick={() => deleteHabit(props.habit.id)}
+            />
+          </span>
         </div>
       </div>
-    </>
+
+      <div
+        style={{
+          width: "max-content",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          paddingLeft: "25px",
+          marginTop: "10px",
+        }}
+      >
+        <div>
+          <span style={textStyling}>then </span>
+
+          {props.habit &&
+            props.habit.actions.map((action: tAction, index: any) => {
+              return (
+                <span key={index}>
+                  <span style={textStylingDimmed}>{"{ "}</span>
+                  <ContentEditable
+                    html={action.title}
+                    disabled={props.disabled}
+                    onChange={(e) => onChange(e, index, "action")}
+                    onFocus={(e) => onFocus(e, index, "action")}
+                    onBlur={(e) => onBlur(e, index, "action")}
+                    tagName="span"
+                    style={{ ...textStyling, ...editableStyling }}
+                  />
+
+                  <span style={textStylingDimmed}>{" }"}</span>
+                  <span style={textStyling}>
+                    {props.habit.actions.length != index + 1 && <> & </>}
+                  </span>
+                </span>
+              );
+            })}
+        </div>
+      </div>
+    </div>
   );
 }

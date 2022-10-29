@@ -51,7 +51,7 @@ export const initialHabits = [
     id: "3",
     conditions: [
       {
-        title: "🚬 Craving",
+        title: "🤤 Craving",
       },
     ],
     actions: [
@@ -75,7 +75,7 @@ export const initialHabits = [
     ],
     actions: [
       {
-        title: "🚰 check ToDo list",
+        title: "✅ check ToDo list",
       },
     ],
   },

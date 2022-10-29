@@ -8,13 +8,11 @@ export default function Index(props: any) {
   const { habits } = useHabits();
 
   useEffect(() => {
-      const tempHabits = habits;
-      setTimeout(() => {
-        tempHabits.length > 0 ? router.push("/conditions") : router.push("/habits");
-      }, 3000);
+    const tempHabits = habits;
+    setTimeout(() => {
+      tempHabits.length > 0 ? router.push("/conditions") : router.push("/habits");
+    }, 3000);
   }, [habits]);
 
-  return (
-      <SplashScreen></SplashScreen>
-  );
+  return <SplashScreen></SplashScreen>;
 }

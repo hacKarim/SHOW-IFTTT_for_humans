@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  ReactNode,
-  useState,
-  useEffect,
-} from "react";
+import { createContext, useContext, ReactNode, useState, useEffect } from "react";
 
 import { tHabit, tHabits } from "../helpers";
 import { UUID } from "../helpers";
@@ -35,7 +29,7 @@ const appContextDefaultValues: habitsContextType = {
   deleteActionLog: () => {},
   initializeHabits: () => {},
   isEditingGlobal: Boolean,
-  setIsEditingGlobalState: ()=>{},
+  setIsEditingGlobalState: () => {},
 };
 
 const HabitsContext = createContext<habitsContextType>(appContextDefaultValues);
@@ -81,8 +75,7 @@ export function HabitsProvider({ children }: Props) {
   }, [habits]);
 
   useEffect(() => {
-    typeof window !== "undefined" &&
-      setHabits(JSON.parse(localStorage.getItem("habits") as any));
+    typeof window !== "undefined" && setHabits(JSON.parse(localStorage.getItem("habits") as any));
     typeof window !== "undefined" &&
       setActionLog(JSON.parse(localStorage.getItem("actionLog") as any));
   }, []);
@@ -129,16 +122,13 @@ export function HabitsProvider({ children }: Props) {
   };
 
   const deleteActionLog = (timestamp: string) => {
-    setActionLog(
-      actionLog.filter((actionLog: any) => actionLog.timestamp != timestamp)
-    );
+    setActionLog(actionLog.filter((actionLog: any) => actionLog.timestamp != timestamp));
     localStorage.setItem("actionLog", JSON.stringify(actionLog));
   };
 
-  const setIsEditingGlobalState = (value: any) =>
-  {
+  const setIsEditingGlobalState = (value: any) => {
     setIsEditingGlobal(value);
-  }
+  };
 
   const value = {
     habits,
@@ -151,7 +141,7 @@ export function HabitsProvider({ children }: Props) {
     deleteActionLog,
     initializeHabits,
     isEditingGlobal,
-    setIsEditingGlobalState
+    setIsEditingGlobalState,
   };
 
   return (

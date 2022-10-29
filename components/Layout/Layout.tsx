@@ -20,10 +20,7 @@ const Layout = ({ children }: Props) => {
       <Head>
         <title>{"{...ifttt}"}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="manifest"
-          href="https://guelguin.github.io/IFTTT/manifest.json"
-        />
+        <link rel="manifest" href="https://guelguin.github.io/IFTTT/manifest.json" />
         <meta name="theme-color" content="#fff" />
       </Head>
 
@@ -33,10 +30,7 @@ const Layout = ({ children }: Props) => {
           className={styles.Footer}
           style={{ display: router.pathname == "/" ? "none" : "flex" }}
         >
-          <Link
-            href={"/habits"}
-            style={{ width: "inherit", textAlign: "center" }}
-          >
+          <Link href={"/habits"} style={{ width: "inherit", textAlign: "center" }}>
             <div>
               <TfiLoop
                 style={{
@@ -45,10 +39,7 @@ const Layout = ({ children }: Props) => {
               />
             </div>
           </Link>
-          <Link
-            href={"/conditions"}
-            style={{ width: "inherit", textAlign: "center" }}
-          >
+          <Link href={"/conditions"} style={{ width: "inherit", textAlign: "center" }}>
             <div>
               <TfiHeartBroken
                 style={{
@@ -57,16 +48,9 @@ const Layout = ({ children }: Props) => {
               />
             </div>
           </Link>
-          <Link
-            href={"/stats"}
-            style={{ width: "inherit", textAlign: "center" }}
-          >
+          <Link href={"/stats"} style={{ width: "inherit", textAlign: "center" }}>
             <div style={{ marginTop: "-10px" }}>
-              <Badge
-                color="error"
-                content={actionLog.length}
-                isInvisible={actionLog.length == 0}
-              >
+              <Badge color="error" content={actionLog.length} isInvisible={actionLog.length == 0}>
                 <TfiBookmarkAlt
                   style={{
                     color: router.pathname == "/stats" ? "black" : "grey",

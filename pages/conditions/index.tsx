@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useHabits } from "../../context/AppContext";
 import "react-bubble-ui/dist/index.css";
 import { ToastContainer, toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -117,120 +118,133 @@ export default function Conditions() {
 
   if (conditions.length != 0)
     return (
-      <div
-        style={{
-          height: "100vh",
-          display: "block",
-        }}
-      >
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <div
-          style={
-            {
-              ...containerStyling,
-              ...{
-                flexWrap: selectedConditions.length == 0 ? "wrap" : "unset",
-                placeContent:
-                  selectedConditions.length == 0 ? "center" : "unset",
-              },
-            } as React.CSSProperties
-          }
+          style={{
+            height: "100vh",
+            display: "block",
+          }}
         >
-          {conditions.map((conditionTitle: any, index: any) => (
-            <div
-              key={index}
-              style={{
-                ...conditionStyling,
-                ...{
-                  fontWeight:
-                    selectedConditions.indexOf(conditionTitle[0]) != -1
-                      ? 500
-                      : 400,
-                  background:
-                    selectedConditions.indexOf(conditionTitle[0]) != -1
-                      ? "black"
-                      : "white",
-                  color:
-                    selectedConditions.indexOf(conditionTitle[0]) != -1
-                      ? "white"
-                      : "black",
-                },
-              }}
-              onClick={() => {
-                toggleSelection(conditionTitle[0]);
-              }}
-            >
-              <p style={{ textAlign: "center", margin: "0px" }}>
-                {conditionTitle[0]}
-              </p>
-            </div>
-          ))}
-        </div>
-        {correspondingActions.length > 0 && (
           <div
             style={{
-              textAlign: "center",
-              fontWeight: "500",
               fontSize: "2em",
-              marginTop: "50px",
+              fontWeight: "500",
+              // cursor: "pointer",
+              width: "100%",
+              marginTop: "-10px",
+              padding: "10px",
             }}
           >
-            You should do something:{" "}
+            {"promise conditions = ["}
           </div>
-        )}
-        <div style={actionContainerStyling as React.CSSProperties}>
-          {correspondingActions.map((correspondingAction: any, index: any) => (
+          <div
+            style={
+              {
+                ...containerStyling,
+                ...{
+                  flexWrap: selectedConditions.length == 0 ? "wrap" : "unset",
+                  placeContent: selectedConditions.length == 0 ? "center" : "unset",
+                },
+              } as React.CSSProperties
+            }
+          >
+            {conditions.map((conditionTitle: any, index: any) => (
+              <div
+                key={index}
+                style={{
+                  ...conditionStyling,
+                  ...{
+                    fontWeight: selectedConditions.indexOf(conditionTitle[0]) != -1 ? 500 : 400,
+                    background:
+                      selectedConditions.indexOf(conditionTitle[0]) != -1 ? "black" : "white",
+                    color: selectedConditions.indexOf(conditionTitle[0]) != -1 ? "white" : "black",
+                  },
+                }}
+                onClick={() => {
+                  toggleSelection(conditionTitle[0]);
+                }}
+              >
+                <p style={{ textAlign: "center", margin: "0px" }}>{conditionTitle[0]}</p>
+              </div>
+            ))}
+          </div>
+          {correspondingActions.length > 0 && (
             <div
-              key={index}
               style={{
-                ...actionStyling,
+                textAlign: "center",
+                fontWeight: "500",
+                fontSize: "2em",
+                marginTop: "50px",
               }}
-              onClick={() => {
-                addActionLog({
-                  conditions: selectedConditions,
-                  action: correspondingAction,
-                  timestamp: Date.now(),
-                });
-                notify(
-                  <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-                    <div style={{ fontSize: "4em" }}>👏 🦄</div>
-                    <br />
-                    <div
-                      style={{
-                        background: "#f7f7f7",
-                        padding: "10px",
-                        borderRadius: "10px",
-                      }}
-                    >
-                      <h3>
-                        {"if ("} {selectedConditions.join(" & ")}
-                        {")"}{" "}
-                      </h3>
-                      <h3>
-                        {"then {"} {correspondingAction} {"};  "}
-                      </h3>
-                      x{" "}
-                      {
-                        actionLog.filter(
+            >
+              You should do something:{" "}
+            </div>
+          )}
+          <div style={actionContainerStyling as React.CSSProperties}>
+            {correspondingActions.map((correspondingAction: any, index: any) => (
+              <div
+                key={index}
+                style={{
+                  ...actionStyling,
+                }}
+                onClick={() => {
+                  addActionLog({
+                    conditions: selectedConditions,
+                    action: correspondingAction,
+                    timestamp: Date.now(),
+                  });
+                  notify(
+                    <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+                      <div style={{ fontSize: "4em" }}>👏 🦄</div>
+                      <br />
+                      <div
+                        style={{
+                          background: "#f7f7f7",
+                          padding: "10px",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <h3>
+                          {"if ("} {selectedConditions.join(" & ")}
+                          {")"}{" "}
+                        </h3>
+                        <h3>
+                          {"then {"} {correspondingAction} {"};  "}
+                        </h3>
+                        x{" "}
+                        {actionLog.filter(
                           (actionLogItem: any) =>
                             actionLogItem.action == correspondingAction &&
                             JSON.stringify(actionLogItem.conditions.sort()) ==
                               JSON.stringify(selectedConditions.sort())
-                        ).length + 1
-                      }
-                      
+                        ).length + 1}
+                      </div>
+                      <br />
+                      <br />
                     </div>
-                    <br />
-                    <br />
-                  </div>
-                );
-                setselectedConditions([]);
-              }}
-            >
-              {correspondingAction}
-            </div>
-          ))}
+                  );
+                  setselectedConditions([]);
+                }}
+              >
+                {correspondingAction}
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              fontSize: "2em",
+              fontWeight: "500",
+              // cursor: "pointer",
+              width: "100%",
+              marginTop: "-10px",
+              padding: "10px",
+            }}
+          >
+            {"];"}
+          </div>
+
+          <ToastContainer />
         </div>
-        <ToastContainer />
-      </div>
+      </motion.div>
     );
 }

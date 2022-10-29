@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./Bubble.module.css";
-export default function CompanyBubble(props :any) {
+export default function CompanyBubble(props: any) {
   return (
     <div
       style={{
         backgroundColor: props.backgroundColor + "d0",
         overflow: "hidden",
-
       }}
       className={styles.companyBubble}
     >
@@ -22,7 +21,6 @@ export default function CompanyBubble(props :any) {
             pointerEvents: "none",
           }}
         >
-         
           <p
             style={{
               color: props.textColor,
