@@ -108,7 +108,7 @@ export function HabitsProvider({ children }: Props) {
     localStorage.setItem("habits", JSON.stringify(habits));
   };
 
-  const initializeHabits = (id: String) => {
+  const initializeHabits = () => {
     setHabits(
       initialHabits.map((habit: any, index: any) => {
         habit.order = index;
