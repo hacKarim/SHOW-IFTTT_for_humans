@@ -79,7 +79,7 @@ export default function Home() {
           <div style={addHabitStyling}>{"const goodHabits = ["}</div>
           <div
             style={{
-              height: !isEditingGlobal ? "calc(100vh - 160px)" : "100vh",
+              height: !isEditingGlobal ? "calc(100vh - 160px)" : "calc(100vh - 50px)",
               overflowY: "scroll",
               overflowX: "hidden",
             }}
@@ -130,6 +130,7 @@ export default function Home() {
               )}
             </div>
           </div>
+          {!isEditingGlobal && <div style={addHabitStyling}>{"];"}</div>}
         </main>
       </div>
     </motion.div>
