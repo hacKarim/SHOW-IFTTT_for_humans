@@ -6,8 +6,7 @@ At the time of writing, the only If Then planner was in Korean, so I decided to 
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="200" style="float:left;"/> 
-
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="200" style="float:left;"/>
 <img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/2.png" alt="drawing" width="200" style="float:left;"/>
 <img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/3.png" alt="drawing" width="200";"/>
 
