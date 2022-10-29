@@ -6,12 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { motion } from "framer-motion";
 
-export default function Conditions() {
+export default function Stats() {
   const { actionLog, deleteActionLog } = useHabits();
 
   if (actionLog.length == 0) {
     return (
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3 }}>
         <div style={{ marginTop: "2em", fontSize: "2em", textAlign: "center" }}>
           <div style={{ fontSize: "4em" }}>📜</div>
           {"You didn't start any activity yet."}

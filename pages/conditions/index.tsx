@@ -109,10 +109,12 @@ export default function Conditions() {
 
   if (conditions.length == 0) {
     return (
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3 }}>
       <div style={{ marginTop: "2em", fontSize: "2em", textAlign: "center" }}>
         <div style={{ fontSize: "4em" }}>🔁</div>
         {"You don't have any routines yet"}
       </div>
+      </motion.div>
     );
   }
 
