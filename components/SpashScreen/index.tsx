@@ -55,18 +55,10 @@ export default function SplashScreen(props: any) {
       <>
         <div className={styles.container}>
           <div className={styles.slottt_machine_recipe}>
-            <span className={styles.recipe_if}>if</span>
-            <div className={styles.slottt_machine_recipe__mask}>
-              <div className={styles.slottt_machine_recipe__items_container}>
-                {randomElements.condition}
-              </div>
-            </div>
-            <span className={styles.recipe_then}>then</span>
-            <div className={styles.slottt_machine_recipe__mask}>
-              <div className={styles.slottt_machine_recipe__items_container}>
-                {randomElements.action}
-              </div>
-            </div>
+            <span className={styles.recipe_if}>if{randomElements.condition}</span>
+                
+            <span className={styles.recipe_then}>then{randomElements.action}</span>
+                
           </div>
         </div>
       </>

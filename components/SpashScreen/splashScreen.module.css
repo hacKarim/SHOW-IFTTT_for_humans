@@ -26,10 +26,7 @@
       margin-right: 10px;
       margin-bottom: -20px;
   }
-  
-  .slottt_machine_recipe__items_container {
-      position: absolute;
-  }
+
   
   .slottt_machine_recipe__item {
       min-width: 150px;
@@ -43,7 +40,7 @@
 
   .recipe_if, .recipe_then, .slottt_machine_recipe__items_container{
       font-weight: bold;
-      font-size: 80px;
+      font-size: 100px;
   }
   
   .tagline {
