@@ -8,9 +8,9 @@ At the time of writing, the only If Then planner was in Korean, so I decided to 
 
 ## Screenshots
 
-<img src="https://github.com/Guelguin/IFTTT/raw/master/screenshots/1.png" alt="drawing" width="200"/>
-<img src="https://github.com/Guelguin/IFTTT/raw/master/screenshots/2.png" alt="drawing" width="200"/>
-<img src="https://github.com/Guelguin/IFTTT/raw/master/screenshots/3.png" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/1.png" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/2.png" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/Guelguin/IFTTT/main/screenshots/3.png" alt="drawing" width="200"/>
 
 
 
@@ -246,7 +246,7 @@ More mental health tips from:  [Mental Health Foundation](https://www.mentalheal
 [Man's Search for Meaning](https://www.indiebound.org/book/9780807014295), a 1946 book written by a Holocaust survivor & psychotherapist.  
 [Meditation 101](https://www.youtube.com/watch?v=rqoxYKtEWEc), a 2-minute animation.
 
-[ncase](https://ncase.me/mental-health/)
+[ncase](https://ncase.me/mental-health/), the author of the ressources in the readme
 
 ・・・
 

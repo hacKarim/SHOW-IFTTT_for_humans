@@ -94,7 +94,14 @@ export function HabitsProvider({ children }: Props) {
   };
 
   const deleteHabit = (id: String) => {
-    setHabits(habits.filter((habit: any) => habit.id != id));
+    setHabits(
+      habits
+        .filter((habit: any) => habit.id != id)
+        .map((habit: any, index: any) => {
+          habit.order = index;
+          return habit;
+        })
+    );
     localStorage.setItem("habits", JSON.stringify(habits));
   };
 
@@ -104,7 +111,9 @@ export function HabitsProvider({ children }: Props) {
   };
 
   const deleteActionLog = (timestamp: string) => {
-    setActionLog(actionLog.filter((actionLog:any)=> actionLog.timestamp != timestamp));
+    setActionLog(
+      actionLog.filter((actionLog: any) => actionLog.timestamp != timestamp)
+    );
     localStorage.setItem("actionLog", JSON.stringify(actionLog));
   };
 
@@ -116,7 +125,7 @@ export function HabitsProvider({ children }: Props) {
     conditions,
     actionLog,
     addActionLog,
-    deleteActionLog
+    deleteActionLog,
   };
 
   return (

@@ -85,6 +85,7 @@ export default function Conditions() {
     flexWrap: "nowrap",
     flexDirection: "column",
     justifyContent: "flex-start",
+    maxWidth: "700px",
   };
 
   useEffect(() => {
@@ -193,7 +194,7 @@ export default function Conditions() {
                             JSON.stringify(actionLogItem.conditions.sort()) ==
                               JSON.stringify(selectedConditions.sort())
                         ).length
-                      }
+                      }{" "}
                       times
                     </div>
                     <br />
