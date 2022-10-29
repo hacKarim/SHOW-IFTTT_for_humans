@@ -192,8 +192,7 @@ export default function Conditions() {
                 });
                 notify(
                   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-                    <div style={{ fontSize: "4em" }}>🦄</div>
-                    <h1>Bravo 👏</h1>
+                    <div style={{ fontSize: "4em" }}>👏 🦄</div>
                     <br />
                     <div
                       style={{
