@@ -71,10 +71,14 @@ export default function Habit(props: any) {
       <div
         style={{
           overflow: "hidden",
-          margin: "10px 0px 50px 0px",
+          margin: "10px 10px 10px 40px",
           overflowX: "scroll",
-          paddingLeft: 30,
+          paddingLeft: 5,
+          paddingRight: 5,
           height: "fit-content",
+          background: "#eeeeee",
+          borderRadius: "10px",
+          width: props.disabled ? "fit-content" : "unset"
         }}
         onMouseOver={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}

@@ -185,7 +185,7 @@ export default function Home() {
         </div>
         <div
           onClick={() => addHabit(simpleHabit)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", width: "fit-content" }}
         >
           <Habit key={emptyHabit.id} habit={emptyHabit} disabled></Habit>
         </div>

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHabits } from "../../context/AppContext";
 import "react-bubble-ui/dist/index.css";
+import { ToastContainer, toast, Slide, Zoom, Flip, Bounce  } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Conditions() {
   const { habits, conditions, addActionLog } = useHabits();
@@ -18,6 +21,28 @@ export default function Conditions() {
       }
     }
   };
+
+  const notify = (text: any) =>
+    toast(text, {
+      position: "bottom-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+      style:{
+        fontSize: "2em",
+        width:"100vw",
+        // left: "0%",
+        height: "100vh",
+        maxHeight: "unset",
+        maxWidth: "unset",
+        textAlign: "center",
+        margin:"0px"
+      }
+    });
 
   const conditionStyling = {
     display: "flex",
@@ -126,18 +151,21 @@ export default function Conditions() {
               style={{
                 ...actionStyling,
               }}
-              onClick={() =>
+              onClick={() => {
                 addActionLog({
                   conditions: selectedConditions,
                   action: correspondingAction,
                   timestamp: Date.now(),
-                })
-              }
+                });
+                notify(<><div style={{fontSize:"4em"}}>🦄</div>Bravo 👏 for <br/><br/>[ {correspondingAction} ]</>);
+                setselectedConditions([]);
+              }}
             >
               {correspondingAction}
             </div>
           ))}
         </div>
+        <ToastContainer />
       </>
     );
 }

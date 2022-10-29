@@ -61,4 +61,9 @@ a {
 
 
 
-  
+    .Toastify__toast-container{
+      /* width: 200vw; */
+      left: 0px !important;
+      top: 0px !important;
+      transform: none !important;
+    }
