@@ -57,7 +57,7 @@ export default function Home() {
       {
         title:
           templateActions[
-            Math.floor(Math.random() * templateConditions.length)
+            Math.floor(Math.random() * templateActions.length)
           ],
       },
     ],
