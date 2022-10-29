@@ -20,17 +20,33 @@ https://guelguin.github.io/IFTTT/
 I just threw a bunch of code into Next JS with TypeScript, and it works.
 
 
+
+# TL;DR
+
+- **Do not fear fear itself.**
+- Pain is a protector.
+- Fear is a guard dog for your needs.
+- **All feelings are imperfect signals about met/unmet needs.**
+- Our fundamental human needs are: physical needs, social needs, "becoming a better person" needs.
+- **Healthy people don't "cope" with emotions, they _collaborate_ with them. They use "negative" emotions as clues, constructive criticism to improve their lives.**
+- If your fear guard-dog is too hyperactive, don't shoot the dog! Retrain it by forming habits.
+- **Habit = When X, Then Y.**
+- To form habits, have a consistent "When" and simple "Then". Track your progress for ~66 days. One habit at a time.
+- Physical health affects mental health & vice versa. Hardware affects software, software affects hardware.
+- **9 Mental Health Habits for your software & hardware:** Meditation, Journaling, Sleep, Exercise, Eat, Talk with friends, Make new friends, Learning, Practicing virtues.
+
+---
+
+
 # Habits 101
 
 To train a dog, first: don't beat the dog. Don't fear fear itself.
 
 So, what then, are you supposed to buy one of those clickers and train your own mind with operant conditioning?
 
-Well... yeah! Okay, dog clicker is optional. But, we have a word for when humans do operant conditioning on themselves:
-
 ## Habits.
 
-Here's a quick summary of the science of forming habits, paraphrased from the British Journal of General Practice [https://bjgp.org/content/bjgp/62/605/664.full.pdf]:
+Here's a quick summary of the science of forming habits.
 
 1. **Habit = When X, Then Y.**  
    X is the "cue", Y is the "routine". Example: "when I come out of the shower, then I will floss my teeth."
@@ -81,8 +97,6 @@ Not sure how to begin journaling to understand your emotions? Here's a simple te
 
 _"Today when [event], I felt [feeling] because it seemed to fulfill/challenge my need for [need]. Next time, I'll try [experiments around that need]."_
 
-Example: _"Today when my friends all chatted without me, I felt insecure because it seemed to challenge my need for belonging. Next time, I'll try to fulfill my need for belonging either by speaking up more, or practicing being comfortable listening to my pals, actively and wholly, without needing to pipe up to prove my existence."_
-
 (As much as I criticized "challenging your thoughts" earlier, _this_ is where CBT shines. Knowing [common cognitive distortions](https://en.wikipedia.org/wiki/Cognitive_distortion) and how to reframe them _does_ help you make sense of the Pain signals. Just don't approach it like Debate Club, where the point of the game is to "win" by Well, Actually-ing your fear. The goal should be to help your fear _be a better helper_. Help it help you.)
 
 **Example When→Then plan:** _“Before going to sleep, I will write/draw about my feelings for 10 minutes.”_
@@ -93,19 +107,14 @@ Remember, fear is a guard dog for your needs. If you hear it barking "we're in d
 
 ## Habits to protect your physical needs:
 
-Imagine if popsci magazines wrote, "Wow! Getting your computer's hardware wet _can affect how well the software runs_." Or "Wow! Having a lot of intensive software running _can make the hardware hot!_"
-
-That's how I feel about articles acting surprised that physical health affects mental health & vice versa.
-
 ### 😴 Sleep:
 
 If natural selection decided to knock you out unconscious for a third of your life, you'd better _bet_ there's a huge benefit to make that cost/benefit analysis work out.
 
-And it does. As the director of UC Berkeley’s Center for Human Sleep Science explains [in his book](https://www.indiebound.org/book/9781501144318), a good night's sleep reduces your risk for heart disease, cancer, Alzheimer's, depression, anxiety, and more. As a best-selling children's author once said, “[Go The F\*\*k To Sleep](https://www.indiebound.org/book/9781617750250).”
+
 
 **Example When→Then plan:** _“When it's 10pm, I will turn off all my devices, and put them on charger, outside the bedroom, in a trash can, where they belong.”_
 
-Recommended: [F.lux](https://justgetflux.com/). It's an app that changes your screens' lights in evenings, because blue light messes up your sleep cycle.
 
 ### 🏃‍♀️ Exercise:
 
@@ -192,21 +201,6 @@ What helps you meet _all_ of these at the same time: **making fear your friend.*
 
 ---
 
-# TL;DR
-
-- **Do not fear fear itself.**
-- Pain is a protector.
-- Fear is a guard dog for your needs.
-- **All feelings are imperfect signals about met/unmet needs.**
-- Our fundamental human needs are: physical needs, social needs, "becoming a better person" needs.
-- **Healthy people don't "cope" with emotions, they _collaborate_ with them. They use "negative" emotions as clues, constructive criticism to improve their lives.**
-- If your fear guard-dog is too hyperactive, don't shoot the dog! Retrain it by forming habits.
-- **Habit = When X, Then Y.**
-- To form habits, have a consistent "When" and simple "Then". Track your progress for ~66 days. One habit at a time.
-- Physical health affects mental health & vice versa. Hardware affects software, software affects hardware.
-- **9 Mental Health Habits for your software & hardware:** Meditation, Journaling, Sleep, Exercise, Eat, Talk with friends, Make new friends, Learning, Practicing virtues.
-
----
 
 # Extra Resources:
 
