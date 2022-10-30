@@ -39,7 +39,6 @@ https://guelguin.github.io/IFTTT/
 - **[React](https://reactjs.org/)** to describe interface components
 - **[Apollo GraphQL client](https://github.com/apollographql/apollo-client)** to receive social profile infos from the [GraphQL server](https://gitlab.com/kachkaev/website-graphql-server) microservice
 - **[Styled components](https://www.styled-components.com/)** to produce well-structured and collision-free CSS
-- **[I18next](https://github.com/i18next/i18next)** to support English and Russian translations
 - **[Lodash](https://lodash.com/)** to leverage common utility functions
 - **[ESLint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** to ensure that source files are error-free and easy to read
 - **[Github CI](https://github.com/features/actions)** to automatically check code quality and generate a new docker image on every push
