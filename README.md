@@ -2,12 +2,29 @@
 
 A simple IF... THEN... planner for humans. It aims to help track and convert bad habits into good ones.
 
+## Why it works
+
+If-Then planning came out of research into motivation, proposing an effective solution to the pitfalls of goal pursuit. It’s all about giving goals greater precision.
+
+If-Then planning has been recognised in over 100 studies to be highly effective when it comes to resisting temptation and forming good habits, increasing your chances of reaching your goal by up to 300%.
+
+If-Then plans (Gollwitzer 1999), where people commit themselves to doing a certain thing in a specific situation are commonly used in health psychology. These self-made plans capture pre-specified responses if a certain situation occurs. Deciding such things in advance reduces the demands you put on your willpower.
+
+### If-then plans go like this:
+
+When setting a goal you need to specify not only what you will do but also where and when you will do it.
+
+If (or when) [___situation__], then I will do [___behaviour__]
+
+So going back to our goal about managing distraction, we need to know much more about the ‘how’ and the ‘what’; we need to inject more detail. For example:
+
+If I’m distracted [by someone talking to me when I’m concentrating], then [I’ll politely ask them to stop].
+
+This may sound a bit cumbersome to start with but research suggests far more goals are achieved by using If-Then planning. And the clever bit is that this builds self talk at the same time. You do what you are telling yourself to do. The If-Then plan succeeds because the situation and the action become linked in your mind. The brain recognises the situation as an opportunity to advance the goal. When the situation is detected, action is initiated automatically. If-Then plans are a good way of making new habits stick.
 
 ## Link
 
 https://guelguin.github.io/IFTTT/
-
-
 
 ## Features
 
@@ -15,9 +32,34 @@ https://guelguin.github.io/IFTTT/
 - A notion inspired planner for writing habits and sticking to them.
 - A condition selector, that returns the most relevant habit.
 
-## Tech Stack
+## Key ingredients
 
-I just threw a bunch of code into Next JS with TypeScript, and it works.
+- **[TypeScript](https://www.typescriptlang.org/)** to ensure the highest code quality
+- **[Node.js](https://nodejs.org/)** to run JavaScript on the server
+- **[React](https://reactjs.org/)** to describe interface components
+- **[Apollo GraphQL client](https://github.com/apollographql/apollo-client)** to receive social profile infos from the [GraphQL server](https://gitlab.com/kachkaev/website-graphql-server) microservice
+- **[Styled components](https://www.styled-components.com/)** to produce well-structured and collision-free CSS
+- **[I18next](https://github.com/i18next/i18next)** to support English and Russian translations
+- **[Lodash](https://lodash.com/)** to leverage common utility functions
+- **[ESLint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** to ensure that source files are error-free and easy to read
+- **[Github CI](https://github.com/features/actions)** to automatically check code quality and generate a new docker image on every push
+
+
+
+## Project structure
+
+The repository generally follows [Next.js](https://github.com/vercel/next.js) folder structure, except that the source code is stored in `src` subdirectory.
+This makes it easier to search and replace text across multiple files as well as to run code quality checks.
+
+The code is inspired by these examples:
+
+- [custom-server-typescript](https://github.com/vercel/next.js/tree/canary/examples/custom-server-typescript)
+- [root-static-files](https://github.com/vercel/next.js/tree/canary/examples/root-static-files)
+- [with-apollo](https://github.com/vercel/next.js/tree/canary/examples/with-apollo)
+- [with-loading](https://github.com/vercel/next.js/tree/canary/examples/with-loading)
+- [with-next-i18next](https://github.com/vercel/next.js/tree/canary/examples/with-next-i18next)
+- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+
 
 
 
@@ -213,3 +255,17 @@ More mental health tips from: [Mental Health Foundation](https://www.mentalhealt
 ・・・
 
 Finally, thank _you_ for reading! Whoever you are: Stay determined. Good luck.
+
+
+
+
+
+## Getting involved
+
+This is a pretty small personal project, meaning that there is nothing much to collaborate on.
+However, I don’t exclude that you might want to learn something by playing with the repo or even make your own (much better) website based on my code.
+If you have questions, feel free to ask me anything by creating a new [GitLab issue](https://gitlab.com/kachkaev/website-frontend/issues) or [sending an email](mailto:alexander@kachkaev.ru)!
+
+The code is shared under the [MIT license](LICENSE), so you are free to do what you want with it!
+
+
