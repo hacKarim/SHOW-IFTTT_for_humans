@@ -14,8 +14,10 @@
     "@emoji-mart/data": "^1.0.6",
     "@emoji-mart/react": "^1.0.1",
     "@nextui-org/react": "^1.0.0-beta.10",
+    "@uiw/react-markdown-preview": "^4.1.4",
     "emoji-mart": "^5.2.2",
     "framer-motion": "^7.6.2",
+    "markdown-it": "^13.0.1",
     "moment": "^2.29.4",
     "next": "13.0.0",
     "next-pwa": "^5.6.0",
@@ -25,7 +27,12 @@
     "react-contenteditable": "^3.3.6",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "react-toastify": "^9.0.8"
+    "react-markdown": "^8.0.3",
+    "react-toastify": "^9.0.8",
+    "rehype-react": "^7.1.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.7",

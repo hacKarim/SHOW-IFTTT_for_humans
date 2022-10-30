@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { ReactNode } from "react";
 import styles from "./Layout.module.css";
-import { TfiLoop, TfiHeartBroken, TfiBookmarkAlt } from "react-icons/tfi";
+import { TfiInfinite, TfiHeartBroken, TfiAgenda, TfiReceipt } from "react-icons/tfi";
 import { Badge } from "@nextui-org/react";
 import { useHabits } from "../../context/AppContext";
 import { useRouter } from "next/router";
@@ -32,7 +32,7 @@ const Layout = ({ children }: Props) => {
         >
           <Link href={"/habits"} style={{ width: "inherit", textAlign: "center" }}>
             <div>
-              <TfiLoop
+              <TfiInfinite
                 style={{
                   color: router.pathname == "/habits" ? "black" : "grey",
                 }}
@@ -51,12 +51,21 @@ const Layout = ({ children }: Props) => {
           <Link href={"/stats"} style={{ width: "inherit", textAlign: "center" }}>
             <div style={{ marginTop: "-10px" }}>
               <Badge color="error" content={actionLog.length} isInvisible={actionLog.length == 0}>
-                <TfiBookmarkAlt
+                <TfiAgenda
                   style={{
                     color: router.pathname == "/stats" ? "black" : "grey",
                   }}
                 />
               </Badge>
+            </div>
+          </Link>
+          <Link href={"/about"} style={{ width: "inherit", textAlign: "center" }}>
+            <div>
+              <TfiReceipt
+                style={{
+                  color: router.pathname == "/about" ? "black" : "grey",
+                }}
+              />
             </div>
           </Link>
         </footer>

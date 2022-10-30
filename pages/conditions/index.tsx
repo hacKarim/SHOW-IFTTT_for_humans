@@ -130,7 +130,7 @@ export default function Conditions() {
           <div
             style={{
               fontSize: "2em",
-              fontWeight: "500",
+              fontWeight: "700",
               // cursor: "pointer",
               width: "100%",
               marginTop: "-10px",
@@ -173,7 +173,7 @@ export default function Conditions() {
           <div
             style={{
               fontSize: "2em",
-              fontWeight: "500",
+              fontWeight: "700",
               // cursor: "pointer",
               width: "100%",
               marginTop: "-10px",
@@ -187,11 +187,11 @@ export default function Conditions() {
               style={{
                 textAlign: "center",
                 fontWeight: "500",
-                fontSize: "2em",
+                fontSize: "1.5em",
                 marginTop: "50px",
               }}
             >
-              You should do something:{" "}
+              {"("}{selectedConditions.join(").(")}{").then() => {"}
             </div>
           )}
           <div style={actionContainerStyling as React.CSSProperties}>
@@ -242,8 +242,20 @@ export default function Conditions() {
               >
                 {correspondingAction}
               </div>
+              
+              
             ))}
           </div>
+          <div
+              style={{
+                textAlign: "center",
+                fontWeight: "500",
+                fontSize: "1.5em",
+                display: selectedConditions.length == 0 ? "none" : "block"
+              }}
+            >
+              {"}"}
+            </div>
 
 
           <ToastContainer />
