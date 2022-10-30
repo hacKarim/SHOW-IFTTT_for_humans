@@ -263,8 +263,8 @@ Finally, thank _you_ for reading! Whoever you are: Stay determined. Good luck.
 ## Getting involved
 
 This is a pretty small personal project, meaning that there is nothing much to collaborate on.
-However, I don’t exclude that you might want to learn something by playing with the repo or even make your own (much better) website based on my code.
-If you have questions, feel free to ask me anything by creating a new [GitLab issue](https://gitlab.com/kachkaev/website-frontend/issues) or [sending an email](mailto:alexander@kachkaev.ru)!
+However, I don’t exclude that you might want to learn something by playing with the repo or even make your own app based on my code.
+If you have questions, feel free to ask me anything by creating a new issue.
 
 The code is shared under the [MIT license](LICENSE), so you are free to do what you want with it!
 
