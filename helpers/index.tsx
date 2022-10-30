@@ -25,5 +25,4 @@ export const UUID = (): string => {
   return result;
 };
 
-
 //TODO: Add other types : actionLogItem

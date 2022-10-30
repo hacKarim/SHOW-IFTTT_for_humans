@@ -24,16 +24,18 @@ const templateActions = [
   "🚶‍♀️ go for a walk",
 ];
 
-export const simpleHabit = () : tHabit => {return( {
-  id: undefined,
-  conditions: [
-    {
-      title: templateConditions[Math.floor(Math.random() * templateConditions.length)],
-    },
-  ],
-  actions: [
-    {
-      title: templateActions[Math.floor(Math.random() * templateActions.length)],
-    },
-  ],
-})};
+export const simpleHabit = (): tHabit => {
+  return {
+    id: undefined,
+    conditions: [
+      {
+        title: templateConditions[Math.floor(Math.random() * templateConditions.length)],
+      },
+    ],
+    actions: [
+      {
+        title: templateActions[Math.floor(Math.random() * templateActions.length)],
+      },
+    ],
+  };
+};

@@ -5,15 +5,13 @@ import { useHabits } from "../../context/AppContext";
 import Habit from "../../components/habit";
 import { motion } from "framer-motion";
 import { emptyHabit } from "../../helpers/emptyHabit";
-import { simpleHabit} from "../../helpers/tinker";
+import { simpleHabit } from "../../helpers/tinker";
 
 export default function Home() {
   const { addHabit, editHabit, deleteHabit, habits, initializeHabits, isEditingGlobal } =
     useHabits();
 
   useEffect(() => {}, [habits]);
-
-
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>

@@ -1,22 +1,21 @@
-.emptyPlaceholder{
-    margin-top: 2em", fontSize: "2em", textAlign: "center;
+.emptyPlaceholder {
+    margin-top: 2em", fontSize: " 2em", textAlign: " center;
 }
 
-.emptyPlaceholder_icon
-{
+.emptyPlaceholder_icon {
     font-size: 4em;
 }
 
 .placeholder {
     font-size: 2em;
-            font-weight: 500;
-            /* cursor: "pointer", */
-            width: 100%;
-            margin-top: -10px;
-            padding: 10px;
+    font-weight: 500;
+    /* cursor: "pointer", */
+    width: 100%;
+    margin-top: -10px;
+    padding: 10px;
 }
-.list 
-{
+
+.list {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -27,26 +26,23 @@
     font-weight: bold;
 }
 
-.row
-{
+.row {
     display: flex;
-                flex-wrap: nowrap;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: stretch;
-                align-content: center;
-                padding: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    padding: 10px;
 }
 
-.scrollable_area
-{
+.scrollable_area {
     width: 100%;
     white-space: nowrap;
     overflow: scroll;
 }
 
-.deleteButton
-{
+.deleteButton {
     cursor: pointer;
     color: darkRed;
     margin-bottom: -3px;
