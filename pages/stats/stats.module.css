@@ -1,0 +1,54 @@
+.emptyPlaceholder{
+    margin-top: 2em", fontSize: "2em", textAlign: "center;
+}
+
+.emptyPlaceholder_icon
+{
+    font-size: 4em;
+}
+
+.placeholder {
+    font-size: 2em;
+            font-weight: 500;
+            /* cursor: "pointer", */
+            width: 100%;
+            margin-top: -10px;
+            padding: 10px;
+}
+.list 
+{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.row
+{
+    display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+                align-content: center;
+                padding: 10px;
+}
+
+.scrollable_area
+{
+    width: 100%;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.deleteButton
+{
+    cursor: pointer;
+    color: darkRed;
+    margin-bottom: -3px;
+    margin-left: 10px;
+}

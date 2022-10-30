@@ -170,6 +170,18 @@ export default function Conditions() {
               </div>
             ))}
           </div>
+          <div
+            style={{
+              fontSize: "2em",
+              fontWeight: "500",
+              // cursor: "pointer",
+              width: "100%",
+              marginTop: "-10px",
+              padding: "10px",
+            }}
+          >
+            {"];"}
+          </div>
           {correspondingActions.length > 0 && (
             <div
               style={{
@@ -232,18 +244,7 @@ export default function Conditions() {
               </div>
             ))}
           </div>
-          <div
-            style={{
-              fontSize: "2em",
-              fontWeight: "500",
-              // cursor: "pointer",
-              width: "100%",
-              marginTop: "-10px",
-              padding: "10px",
-            }}
-          >
-            {"];"}
-          </div>
+
 
           <ToastContainer />
         </div>

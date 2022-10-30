@@ -10,6 +10,7 @@ export default function Index(props: any) {
   useEffect(() => {
     const tempHabits = habits;
     setTimeout(() => {
+      // show splash screen at start, then redirect
       tempHabits.length > 0 ? router.push("/conditions") : router.push("/habits");
     }, 3000);
   }, [habits]);

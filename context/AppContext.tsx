@@ -43,6 +43,9 @@ type Props = {
 };
 
 export function HabitsProvider({ children }: Props) {
+  const [conditions, setConditions] = useState<any>([]);
+  const [isEditingGlobal, setIsEditingGlobal] = useState<any>(false);
+
   const [habits, setHabits] = useState<any>(
     typeof window !== "undefined" && !localStorage.getItem("habits")
       ? localStorage.setItem("habits", JSON.stringify([]))
@@ -54,9 +57,6 @@ export function HabitsProvider({ children }: Props) {
       ? localStorage.setItem("actionLog", JSON.stringify([]))
       : []
   );
-
-  const [conditions, setConditions] = useState<any>([]);
-  const [isEditingGlobal, setIsEditingGlobal] = useState<any>(false);
 
   useEffect(() => {
     let conditionsTemp: any = [];
@@ -72,6 +72,7 @@ export function HabitsProvider({ children }: Props) {
         }, {})
       )
     );
+    //each time habits change, the conditions grouped are updated
   }, [habits]);
 
   useEffect(() => {
@@ -104,6 +105,8 @@ export function HabitsProvider({ children }: Props) {
         habit.order = index;
         return habit;
       });
+    //reset order index after deleting a habit
+
     setHabits(tempHabits);
     localStorage.setItem("habits", JSON.stringify(tempHabits));
   };
