@@ -4,6 +4,7 @@ import styles from "./stats.module.css";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { motion } from "framer-motion";
+import Stat from "../../components/Stat";
 
 export default function Stats() {
   const { actionLog, deleteActionLog } = useHabits();
@@ -37,6 +38,7 @@ export default function Stats() {
             </div>
           ))}
         </div>
+        <Stat></Stat>
       </motion.div>
     );
 }

@@ -22,6 +22,22 @@ If I’m distracted [by someone talking to me when I’m concentrating], then [I
 
 This may sound a bit cumbersome to start with but research suggests far more goals are achieved by using If-Then planning. And the clever bit is that this builds self talk at the same time. You do what you are telling yourself to do. The If-Then plan succeeds because the situation and the action become linked in your mind. The brain recognises the situation as an opportunity to advance the goal. When the situation is detected, action is initiated automatically. If-Then plans are a good way of making new habits stick.
 
+## Remember !
+
+- **Do not fear fear itself.**
+- Pain is a protector.
+- Fear is a guard dog for your needs.
+- **All feelings are imperfect signals about met/unmet needs.**
+- Our fundamental human needs are: physical needs, social needs, "becoming a better person" needs.
+- **Healthy people don't "cope" with emotions, they _collaborate_ with them. They use "negative" emotions as clues, constructive criticism to improve their lives.**
+- If your fear guard-dog is too hyperactive, don't shoot the dog! Retrain it by forming habits.
+- **Habit = When X, Then Y.**
+- To form habits, have a consistent "When" and simple "Then". Track your progress for ~66 days. One habit at a time.
+- Physical health affects mental health & vice versa. Hardware affects software, software affects hardware.
+- **9 Mental Health Habits for your software & hardware:** Meditation, Journaling, Sleep, Exercise, Eat, Talk with friends, Make new friends, Learning, Practicing virtues.
+
+# Tech
+
 ## Link
 
 https://guelguin.github.io/IFTTT/
@@ -37,6 +53,7 @@ https://guelguin.github.io/IFTTT/
 - **[TypeScript](https://www.typescriptlang.org/)** to ensure the highest code quality
 - **[Node.js](https://nodejs.org/)** to run JavaScript on the server
 - **[React](https://reactjs.org/)** to describe interface components
+- **[NextJS](https://nextjs.org/)** as a framework to leverage developer experience with production-ready features
 - **[Apollo GraphQL client](https://github.com/apollographql/apollo-client)** to receive social profile infos from the [GraphQL server](https://gitlab.com/kachkaev/website-graphql-server) microservice
 - **[Styled components](https://www.styled-components.com/)** to produce well-structured and collision-free CSS
 - **[Lodash](https://lodash.com/)** to leverage common utility functions
@@ -60,21 +77,6 @@ The code is inspired by these examples:
 - [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
 
 
-
-
-# TL;DR
-
-- **Do not fear fear itself.**
-- Pain is a protector.
-- Fear is a guard dog for your needs.
-- **All feelings are imperfect signals about met/unmet needs.**
-- Our fundamental human needs are: physical needs, social needs, "becoming a better person" needs.
-- **Healthy people don't "cope" with emotions, they _collaborate_ with them. They use "negative" emotions as clues, constructive criticism to improve their lives.**
-- If your fear guard-dog is too hyperactive, don't shoot the dog! Retrain it by forming habits.
-- **Habit = When X, Then Y.**
-- To form habits, have a consistent "When" and simple "Then". Track your progress for ~66 days. One habit at a time.
-- Physical health affects mental health & vice versa. Hardware affects software, software affects hardware.
-- **9 Mental Health Habits for your software & hardware:** Meditation, Journaling, Sleep, Exercise, Eat, Talk with friends, Make new friends, Learning, Practicing virtues.
 
 ---
 
