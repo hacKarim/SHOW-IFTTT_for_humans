@@ -1,8 +1,8 @@
-# IFTTT (but for humans)
+# 📱 IFTTT (web/mobile first and but for humans)
 
 A simple IF... THEN... planner for humans. It aims to help track and convert bad habits into good ones.
 
-## Why it works
+## 🔬 Why it works
 
 If-Then planning came out of research into motivation, proposing an effective solution to the pitfalls of goal pursuit. It’s all about giving goals greater precision.
 
@@ -10,7 +10,7 @@ If-Then planning has been recognised in over 100 studies to be highly effective 
 
 If-Then plans (Gollwitzer 1999), where people commit themselves to doing a certain thing in a specific situation are commonly used in health psychology. These self-made plans capture pre-specified responses if a certain situation occurs. Deciding such things in advance reduces the demands you put on your willpower.
 
-### If-then plans go like this:
+### 📅 If-then plans go like this:
 
 When setting a goal you need to specify not only what you will do but also where and when you will do it.
 
@@ -22,7 +22,7 @@ If I’m distracted [by someone talking to me when I’m concentrating], then [I
 
 This may sound a bit cumbersome to start with but research suggests far more goals are achieved by using If-Then planning. And the clever bit is that this builds self talk at the same time. You do what you are telling yourself to do. The If-Then plan succeeds because the situation and the action become linked in your mind. The brain recognises the situation as an opportunity to advance the goal. When the situation is detected, action is initiated automatically. If-Then plans are a good way of making new habits stick.
 
-## Remember !
+## 🧠 Remember !
 
 - **Do not fear fear itself.**
 - Pain is a protector.
@@ -36,19 +36,19 @@ This may sound a bit cumbersome to start with but research suggests far more goa
 - Physical health affects mental health & vice versa. Hardware affects software, software affects hardware.
 - **9 Mental Health Habits for your software & hardware:** Meditation, Journaling, Sleep, Exercise, Eat, Talk with friends, Make new friends, Learning, Practicing virtues.
 
-# Tech
+# 💾 Tech
 
-## Link
+## 🕹️ Link
 
-https://guelguin.github.io/IFTTT/
+https://guelguin.github.io/SHOW-IFTTT_for_humans/
 
-## Features
+## 💡 Features
 
 - Privacy focused: all your data is stored loclly.
 - A notion inspired planner for writing habits and sticking to them.
 - A condition selector, that returns the most relevant habit.
 
-## Key ingredients
+## 🥣 Key ingredients
 
 - **[TypeScript](https://www.typescriptlang.org/)** to ensure the highest code quality
 - **[Node.js](https://nodejs.org/)** to run JavaScript on the server
@@ -62,7 +62,7 @@ https://guelguin.github.io/IFTTT/
 
 
 
-## Project structure
+## 🌳 Project structure
 
 The repository generally follows [Next.js](https://github.com/vercel/next.js) folder structure, except that the source code is stored in `src` subdirectory.
 This makes it easier to search and replace text across multiple files as well as to run code quality checks.
@@ -81,13 +81,13 @@ The code is inspired by these examples:
 ---
 
 
-# Habits 101
+# 📖 Habits 101
 
 To train a dog, first: don't beat the dog. Don't fear fear itself.
 
 So, what then, are you supposed to buy one of those clickers and train your own mind with operant conditioning?
 
-## Habits.
+## 🌀 Habits.
 
 Here's a quick summary of the science of forming habits.
 
@@ -108,13 +108,13 @@ Here's a quick summary of the science of forming habits.
 
 > Do NOT try building more than one habit at a time.
 
-### It takes 66 days (on average) for a habit to become automatic.
+### 🔁 It takes 66 days (on average) for a habit to become automatic.
 
 Be patient! Mind-training takes time, but it's worth it.
 
 
 
-# 9 Evidence-Based Mental Health Habits
+# 🧪 9 Evidence-Based Mental Health Habits
 
 This list is to help you start improving your mental health _today._ Nine sounds overwhelming, so just pick _one_ habit from the list below, make a small, simple When→Then plan, and track your progress for 66 days or until it becomes automatic. Then come back, pick another habit, repeat.
 
@@ -245,7 +245,7 @@ What helps you meet _all_ of these at the same time: **making fear your friend.*
 ---
 
 
-# Extra Resources:
+# 🔗 Extra Resources:
 
 More mental health tips from: [Mental Health Foundation](https://www.mentalhealth.org.uk/your-mental-health/looking-after-your-mental-health) & [National Health Service](https://www.nhs.uk/conditions/stress-anxiety-depression/improve-mental-wellbeing/)
 [Feeling Good](https://www.indiebound.org/book/9780380810338), the classic 1980 book that popularized CBT.  
@@ -261,12 +261,12 @@ Finally, thank _you_ for reading! Whoever you are: Stay determined. Good luck.
 
 
 
-## Getting involved
+## 🤔 Getting involved
 
 This is a pretty small personal project, meaning that there is nothing much to collaborate on.
 However, I don’t exclude that you might want to learn something by playing with the repo or even make your own app based on my code.
 If you have questions, feel free to ask me anything by creating a new issue.
 
-The code is shared under the [MIT license](LICENSE), so you are free to do what you want with it!
+The code is shared under the [cc0-1.0](LICENSE), so you are free to do what you want with it!
 
 
